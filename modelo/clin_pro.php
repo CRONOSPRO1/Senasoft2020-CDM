@@ -1,6 +1,6 @@
 <?php
 require_once'Model/Conexion.php';
-class model{
+class clin_pro{
     public $conexion;
 
     public function __construct()
