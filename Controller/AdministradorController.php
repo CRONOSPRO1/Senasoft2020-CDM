@@ -1,7 +1,7 @@
 <?php
 require_once 'config/parameters.php';
 require_once'modelo/clin_pro.php';
-require_once'modelo/Admin.php';
+require_once'modelo/usuarios.php';
 class AdministradorController{
     public $model_clipro;
     public $model_admin;
@@ -10,12 +10,48 @@ class AdministradorController{
     public function __construct()
     {
         $this->model_clipro;new clin_pro();
-        $this->model_admin;new admin();
+        $this->model_admin;new usuarios();
     }
     public function index(){
         require_once'View/modulos/acceso/index.php';
     }
-    public function registro()
+    public function crear_usuario(){
+        require_once'view/modulos/acceso/';
+    }
+    public function categorias(){
+        require_once'view/modulos/almacen/categorias.php';
+    }
+    public function crear_categoria(){
+        require_once'view/modulos/almacen/crear_categoria';
+    }
+    public function crear_producto(){
+        require_once'view/modulos/almacen/crear_producto';
+    }
+    public function productos(){
+        require_once'view/modulos/almacen/productos.php';
+    }
+    public function crear_ingreso(){
+        require_once'view/modulos/compras/crear_ingreso.php';
+    }
+    public function crear_proveedor(){
+        require_once'view/modulos/compras/crear_proveedor.php';
+    }
+    public function ingresos(){
+        require_once'view/modulos/compras/ingresos.php';
+    }
+    public function proveedores(){
+        require_once'view/modulos/compras/proveedores.php';
+    }
+    public function ventas(){
+        require_once'view/modulos/ventas/index.php';
+  
+
+
+
+
+
+
+    /*public function registro()
     {
         if (!empty($_POST['']) &&  !empty($_POST[''] ) {
             $this->datos[''] = $_POST[''];
@@ -34,7 +70,7 @@ class AdministradorController{
         } else {
             //retornar al formulario si no puso todos los datos
         }
-    }
+    }*/
     
     
     

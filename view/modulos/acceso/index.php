@@ -19,7 +19,8 @@
 
 
 
-    <?php include '../menu.php'; ?>
+    <?php include_once '../menu.php';?>
+
 
 
     <div class="container mb-5">

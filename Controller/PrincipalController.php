@@ -1,89 +1,92 @@
 <?php
 require_once 'config/parameters.php';
+require_once 'modelo/clin_pro.php';
+require_once 'modelo/Usuarios.php';
 class PrincipalController
 {
-    public $model;
-    public $datos;
+    public $model_clipro;
+    public $model_admin;
 
 
     public function __construct()
     {
-        
-        $this->session = session_start();
+        $this->model_clipro = new clin_pro();
+        $this->model_admin = new usuarios();
     }
-    public function index(){
-        require_once'view/index.php';
+    public function index()
+    {
+        require_once 'view/index.php';
     }
-
-    public function registro()
+    public function actualizar()
     {
         if (!empty($_POST['']) &&  !empty($_POST[''])) {
             $this->datos[''] = $_POST[''];
 
-            $resultado=$this->model->insertar($this->datos);
-
-            if ($resultado == 1) {
-                echo '<script>alert("Ya estas registrado,puedes iniciar sesion")</script>';
-                //ruta si se registro
-                require_once 'view/index.php';
-            } else {
-                echo '<script>alert("Usuario no registrado")</script>';
-                //ruta si no se pudo registrar
-                require_once 'view/register.php';
-            }
+            $this->model->eliminar($this->datos);
         } else {
-            //retornar al formulario si no puso todos los datos
         }
     }
-    public function eliminar()
+    /*public function crear_administrador()
     {
-        if (isset($_POST['id'])) {
-            $this->datos['id'] = $_POST['id'];
+        $this->datos['tipo_documento']="Cedula";
+        $this->datos['no_documento']="123456789";
+        $this->datos['nombre']="Demo";
+        $this->datos['email']="email";
+        $this->datos['administrador']="Administrador";
+        $this->datos['clave'] = "senasoft";
+        $this->datos['clave'] = password_hash($this->datos['clave'], PASSWORD_BCRYPT);
+        var_dump($this->datos);
 
-            $this->model->eliminar($this->datos);
+       
 
-            require_once '';
-        } else {
-            //Mensaje de no eliminado
-        }
-    }
+        $this->model_admin->insertar($this->datos);
+    }*/
+    public function validar()
+    {
+        if (!empty($_POST['no_documento']) &&  !empty($_POST['clave'])) {
+            $no_documento = $_POST['no_documento'];
+            $clave = $_POST['clave'];
 
-    public function actualizar(){
-        if (!empty($_POST['']) &&  !empty($_POST[''])){
-            $this->datos['']=$_POST[''];
+            $resultado = $this->model_clipro->validacion($no_documento);
+            
+            if (!empty($resultado)) {
+                $verificacion = password_verify($clave, $resultado[0]['clave']);
+                if ($verificacion == 1) {
+                    //session para el otro modulo
+                    $_SESSION['id_vendedor'] = $resultado[0]['id'];
+                    $_SESSION['Nombre_vendedor'] = $resultado[0]['nombre'];
 
-            $this->model->eliminar($this->datos);
-        }else{
+                    //ruta si puso bien el usuario y contraseña
+                    echo "session de otro";
+                } else {
 
-        }
-    }
-
-    public function validar(){
-        $variable_usuario = $_POST[''];
-        $variable_clave = $_POST[''];
-
-        $resultado = $this->model->validacion($variable_usuario);
-
-        if (!empty($resultado)) {
-            $verificacion = password_verify($variable_clave, $resultado[0]['clave']);
-            if ($verificacion == 1) {
-                //session para el otro modulo
-                $_SESSION['varibale id'] = $resultado[0]['varible id'];
-                $_SESSION['variable nombre '] = $resultado[0]['variable nombre'];
-
-                //ruta si puso bien el usuario y contraseña
-                require_once 'view/admin/usuarios.php';
+                    //si no puso bien las contraseña
+                    echo '<script>alert("Contraseña incorrecta")</script>';
+                    echo "";
+                    require_once 'view/index.php';
+                }
             } else {
-
-                //si no puso bien las contraseña
-                echo '<script>alert("Contraseña incorrecta")</script>';
-                require_once 'view/index.php';
+                $resultado = $this->model_admin->validacion($no_documento);
+                
+                if (!empty($resultado)) {
+                    $verificacion = password_verify($clave, $resultado[0]['clave']);
+                    if ($verificacion == 1) {
+                        //session para el otro modulo
+                        $_SESSION['id'] = $resultado[0]['idusuario'];
+                        $_SESSION['nombre'] = $resultado[0]['nombre'];
+    
+                        //ruta si puso bien el usuario y contraseña
+                        echo "Admin";
+                        header('location:'.base_url.'routes/administrador');
+                    }
+                    
+                } else {
+                    //Si el usuario no existe
+                    echo '<script>alert("Usuario no existe")</script>';
+                    require_once 'view/index.php';
+                    var_dump($resultado);
+                }
             }
-        } else {
-            //Si el usuario no existe
-            echo '<script>alert("Usuario no existe")</script>';
-            require_once 'view/index.php';
         }
     }
-    
 }

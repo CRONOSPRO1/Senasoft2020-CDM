@@ -1,5 +1,5 @@
 <?php
-require_once'Model/Conexion.php';
+require_once'Modelo/Conexion.php';
 class clin_pro{
     public $conexion;
 
@@ -52,11 +52,11 @@ class clin_pro{
         $stmt->execute();
         $stmt->closeCursor();
     }
-    public function validacion($datos)
+    public function validacion($no_documento)
     {
         $stmt = $this->conexion->conectar()->prepare
         ("SELECT * FROM clin_pro where no_documento=:no_documento");
-        $stmt->bindParam(':no_documento', $datos['no_documento'], PDO::PARAM_STR);
+        $stmt->bindParam(':no_documento', $no_documento, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
