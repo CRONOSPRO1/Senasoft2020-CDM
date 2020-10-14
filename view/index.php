@@ -27,7 +27,7 @@
                     <div class="col-sm-8 p-5">
                         <h4 class="text-muted pb-4 borde-bottom-diseno">Iniciar sesión</h4>
                         <div class="form-group">
-                            <form action="" method="POST">
+                            <form action="<?=base_url?>Principal/validar" method="POST">
                                 <input type="number" name="no_documento" class="form-control p pb-4" placeholder="Usuario">
                         </div>
                         <div class="form-group pt-1">
