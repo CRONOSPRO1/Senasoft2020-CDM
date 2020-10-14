@@ -9,44 +9,46 @@
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Iniciar sesión | Automatización y gestión Multitiendas</title>
+    <title>Registarse | Automatización y gestión Multitiendas</title>
 </head>
 
 <body>
 
-    <div class="mt-5 mb-5">
-        <div class="container mt-5" style="max-width: 1000px">
-            <div class="container-fluid bg-white border shadow text-center mt-5">
-                <div class="row">
-                    <div class="col-sm-4 centrar img-login d-flex flex-column align-items-center justify-content-center">
-                        <div class="container ">
-                            <h6 class="text-white mt-5 pt-5">Automatización y gestión Multitiendas</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-8 p-5">
-                        <h4 class="text-muted pb-4 borde-bottom-diseno">Iniciar sesión</h4>
+    <div class="container mt-5 mb-5" style="max-width: 800px">
+        <div class="container-fluid bg-white border shadow text-center">
+            <div>
+                <div class="container p-5">
+                    <h4 class="text-muted pb-4 borde-bottom-diseno">Registrarse</h4>
+                    <form action="" method="POST">
                         <div class="form-group">
-                            <form action="" method="POST">
-                                <input type="number" name="no_documento" class="form-control p pb-4" placeholder="Usuario">
+                            <input type="text" name="nombre" class="form-control p pb-4" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group pb-4">
+                            <select class="form-control" required>
+                                <option value="">Tipo de documento</option>
+                                <option>Cédula de ciudadania</option>
+                                <option>Tarjeta de identidad</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control p pb-4" placeholder="Email" required>
                         </div>
                         <div class="form-group pt-1">
-                            <input type="password" name="clave" class="form-control p pb-4" placeholder="Contraseña">
+                            <input type="password" name="clave" class="form-control p pb-4" placeholder="Contraseña" required>
                         </div>
                         <div class="form-group pt-3">
-                            <input type="submit" class="form-control btn btn-outline-dark" value="Iniciar sesión">
-                            </form>
+                            <input type="submit" class="form-control btn btn-outline-black" value="Listo">
                         </div>
-                        <div class="form-group pt-3">
-                            <span class="text-dark">¿No tienes una cuenta?</span>
-                            <a href="register.php">Registrate</a>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="form-group pb-4">
+                    <span class="text-dark">¿Ya tienes una cuenta?</span>
+                    <a href="index.php">Inicia sesión</a>
                 </div>
             </div>
         </div>
     </div>
-
+    </div>
 
     <!-- jQuery y Boostrao js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
