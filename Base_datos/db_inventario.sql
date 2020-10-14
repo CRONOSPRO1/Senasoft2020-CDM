@@ -101,16 +101,16 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`detalle_ingreso` (
   `costo` DOUBLE NOT NULL,
   `precio` DOUBLE NOT NULL,
   PRIMARY KEY (`id_detalle_ingreso`),
-  INDEX `fk_mov_inventario_idx` (,
-  INDEX `fk_mov_productos_idx` (`,
+ 	INDEX `fk_mov_inventario_idx` (`idingreso`),
+  INDEX `fk_mov_productos_idx` (`idproducto`),
   CONSTRAINT `fk_mov_inventario`
     FOREIGN KEY (`idingreso`)
-    REFERENCES `db_inventario`.`ingreso` (`idingreso`)
+    REFERENCES `ingreso` (`idingreso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_mov_productos`
     FOREIGN KEY (`idproducto`)
-    REFERENCES `db_inventario`.`producto` (`idproducto`)
+    REFERENCES `producto` (`idproducto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -141,16 +141,16 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`pedido` (
   `estado` VARCHAR(45) NOT NULL,
   `idsucursal` INT NOT NULL,
   PRIMARY KEY (`idpedido`),
-  INDEX `fk_pedido_cliente_idx` (`idclien,
-  INDEX `fk_pedido_sucursal_idx` (`idsucurs,
+  INDEX `fk_pedido_cliente_idx` (`idcliente`),
+  INDEX `fk_pedido_sucursal_idx` (`idsucursal`),
   CONSTRAINT `fk_pedido_cliente`
     FOREIGN KEY (`idcliente`)
-    REFERENCES `db_inventario`.`clin_pro` (`id`)
+    REFERENCES `clin_pro` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_pedido_sucursal`
     FOREIGN KEY (`idsucursal`)
-    REFERENCES `db_inventario`.`sucursal` (`idsucursal`)
+    REFERENCES `sucursal` (`idsucursal`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
