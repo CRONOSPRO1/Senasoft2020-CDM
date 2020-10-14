@@ -12,7 +12,7 @@ class ingreso
     {
         $stmt = $this->conexion->conectar()->prepare("INSERT INTO ingreso (idproveedor,tipo_soporte,no_soporte,iva,estado)
         values(:idproveedor,:tipo_soporte,:no_soporte,:iva,:estado) ");
-
+        /* Inicio Transacción */
         $stmt->beginTransaction();
 
         try {
@@ -48,7 +48,7 @@ class ingreso
 
             }
             $stmt->commit();
-            // Banderita
+            // Si todo sale bien Banderita.
             echo 'Datos insertados';
 
         } catch (Exception $e) {
