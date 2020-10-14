@@ -40,11 +40,5 @@ class categoria
         $stmt->closeCursor();
     }
 
-
-
-
-
-
-
-
+}
 ?>
