@@ -1,14 +1,17 @@
 <?php
-class ControladorController
+class PrincipalController
 {
     public $model;
     public $datos;
-    public $session;
+
 
     public function __construct()
     {
         $this->model = new model();
         $this->session = session_start();
+    }
+    public function index(){
+        require_once'view/index.php';
     }
 
     public function registro()
