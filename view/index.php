@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
+    <link rel="stylesheet" href="<?= base_url ?>assets/css/main.css">
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -14,13 +14,13 @@
 
 <body>
 
-    <div class="mt-5 mb-5">
+    <div class="mt-5 mb-5 pt-3">
         <div class="container mt-5" style="max-width: 1000px">
             <div class="container-fluid bg-white border shadow text-center mt-5">
                 <div class="row">
                     <div class="col-sm-4 centrar img-login d-flex flex-column align-items-center justify-content-center">
                         <div class="container ">
-                            <h6 class="text-white mt-5 pt-5">Automatización y gestión Multitiendas</h6>
+                            <h6 class="text-white text-shadow" style="font-size: 20px;text-shadow: #000 0px 1px 20px;">Automatización y gestión Multitiendas</h6>
                         </div>
                     </div>
 
@@ -38,8 +38,7 @@
                             </form>
                         </div>
                         <div class="form-group pt-3">
-                            <span class="text-dark">¿No tienes una cuenta?</span>
-                            <a href="register.php">Registrate</a>
+                            <a href="register.php" class="text-dark">Olvidé la cotraseña</a>
                         </div>
                     </div>
                 </div>
