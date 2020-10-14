@@ -38,15 +38,7 @@ class categoria
         $stmt->execute();
         $stmt->closeCursor();
     }
-    public function validacion($datos)
-    {
-        $stmt = $this->conexion->conectar()->prepare
-        ("SELECT * FROM categoria where idcategoria=:idcategoria");
-        $stmt->bindParam(':idcategoria', $datos['idcategoria'], PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetchAll();
-        $stmt->closeCursor();
-    }
+    
     public function listar_categorias()
     {
         $stmt = $this->conexion->conectar()->prepare
