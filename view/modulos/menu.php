@@ -40,9 +40,9 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Pedidos</a>
-                                <a class="dropdown-item" href="#">Clientes</a>
-                                <a class="dropdown-item" href="#">Sucursale</a>
+                                <a class="dropdown-item" href="<?=base_url?>Administrador/pedidos.php">Pedidos</a>
+                                <a class="dropdown-item" href="<?=base_url?>clientes.php">Clientes</a>
+                                <a class="dropdown-item" href="<?=base_url?>sucursales.php">Sucursale</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">

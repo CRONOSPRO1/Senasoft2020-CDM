@@ -163,7 +163,7 @@
         });
         sr.reveal('.container', {
             duration: 2000,
-            origin: 'right',
+            origin: 'top',
 
             distance: '-800px'
         }); 

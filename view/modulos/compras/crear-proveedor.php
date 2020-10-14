@@ -100,7 +100,7 @@
         });
         sr.reveal('.container', {
             duration: 2000,
-            origin: 'right',
+            origin: 'left',
 
             distance: '-800px'
         });
