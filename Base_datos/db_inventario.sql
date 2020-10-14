@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`producto` (
   `estado` VARCHAR(20) NOT NULL DEFAULT '1',
   `disponibilidad` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idproducto`),
-  INDEX `fk_productos_categorias_idx` (`idcategoria` ASC) VISIBLE,
+  INDEX `fk_productos_categorias_idx` (`idcategoria` ASC),
   CONSTRAINT `fk_productos_categorias`
     FOREIGN KEY (`idcategoria`)
     REFERENCES `db_inventario`.`categoria` (`idcategoria`)
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`ingreso` (
   `iva` DOUBLE NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idingreso`),
-  INDEX `fk_inventario_persona_idx` (`idproveedor` ASC) VISIBLE,
+  INDEX `fk_inventario_persona_idx` (`idproveedor` ASC),
   CONSTRAINT `fk_inventario_persona`
     FOREIGN KEY (`idproveedor`)
     REFERENCES `db_inventario`.`clin_pro` (`id`)
@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`detalle_ingreso` (
   `costo` DOUBLE NOT NULL,
   `precio` DOUBLE NOT NULL,
   PRIMARY KEY (`id_detalle_ingreso`),
-  INDEX `fk_mov_inventario_idx` (`idingreso` ASC) VISIBLE,
-  INDEX `fk_mov_productos_idx` (`idproducto` ASC) VISIBLE,
+  INDEX `fk_mov_inventario_idx` (,
+  INDEX `fk_mov_productos_idx` (`,
   CONSTRAINT `fk_mov_inventario`
     FOREIGN KEY (`idingreso`)
     REFERENCES `db_inventario`.`ingreso` (`idingreso`)
@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`pedido` (
   `estado` VARCHAR(45) NOT NULL,
   `idsucursal` INT NOT NULL,
   PRIMARY KEY (`idpedido`),
-  INDEX `fk_pedido_cliente_idx` (`idcliente` ASC) VISIBLE,
-  INDEX `fk_pedido_sucursal_idx` (`idsucursal` ASC) VISIBLE,
+  INDEX `fk_pedido_cliente_idx` (`idclien,
+  INDEX `fk_pedido_sucursal_idx` (`idsucurs,
   CONSTRAINT `fk_pedido_cliente`
     FOREIGN KEY (`idcliente`)
     REFERENCES `db_inventario`.`clin_pro` (`id`)
@@ -166,8 +166,8 @@ CREATE TABLE IF NOT EXISTS `db_inventario`.`detalle_pedido` (
   `cantidad` INT NOT NULL,
   `precio` DOUBLE NOT NULL,
   PRIMARY KEY (`id_detalle_pedido`),
-  INDEX `fk_mov_solicitud_idx` (`idpedido` ASC) VISIBLE,
-  INDEX `fk_mov_producto_idx` (`idproducto` ASC) VISIBLE,
+  INDEX `fk_mov_solicitud_idx` (`idpedido` ASC),
+  INDEX `fk_mov_producto_idx` (`idproducto` ASC),
   CONSTRAINT `fk_mov_solicitud`
     FOREIGN KEY (`idpedido`)
     REFERENCES `db_inventario`.`pedido` (`idpedido`)
