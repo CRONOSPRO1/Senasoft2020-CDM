@@ -9,10 +9,11 @@
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Categorias | Automatización y gestión Multitiendas</title>
+    <title>Pedidos | Automatización y gestión Multitiendas</title>
 </head>
 
 <body>
+
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
     <?php include '../menu.php'; ?>
@@ -24,13 +25,13 @@
                     <div class="card-header bg-dark text-white">
                         <div class="row px-4">
                             <div class="mr-auto">
-                                <h4>Categorias</h4>
+                                <h4>Pedidos</h4>
                             </div>
                             <!-- <div class="text-right">
-                                <a href="crear-categoria.php" class="btn btn-success">
-                                    ✚ Crear categoria
-                                </a>
-                            </div> -->
+                            <a href="crear-pedido.php" class="btn btn-success">
+                                ✚ Crear pedido
+                            </a>
+                        </div> -->
                         </div>
                     </div>
                     <div class="card-body">
@@ -39,31 +40,30 @@
                                 <input type="text" name="busqueda" id="busqueda" placeholder=" Realizar una búsqueda" title="Buscar" autocomplete="off">
                             </div>
                         </div>
-
                         <div class="container" id="alerta-no-results" style="display: none;max-width: 600px;">
                             <div class="alert alert-danger" role="alert">
                                 No hay resultados para mostrar
                             </div>
                         </div>
-
                         <div class="table-responsive" id="tabla">
                             <table class="table table-hover table-striped text-center">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Nombre</th>
-                                        <th>Descripcion</th>
+                                        <th>Tipo soporte</th>
+                                        <th>Número soporte</th>
+                                        <th>Fecha</th>
+                                        <th>Iva</th>
+                                        <th>Total venta</th>
                                         <th col="2">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="registros">
-
                                     <tr>
-
-
-                                        <td>1</td>
-                                        <td>Nombre</td>
-                                        <td>Descripción</td>
+                                        <td>Órden de compras o factura</td>
+                                        <td>2084</td>
+                                        <td>09-12-20 16:03</td>
+                                        <td>19%</td>
+                                        <td>$20,208</td>
                                         <td>
                                             <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
                                                 <span class="text-danger">
@@ -73,7 +73,7 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idcategoria'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idpedido'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
                                                 <span class="text-success">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -83,7 +83,6 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -94,21 +93,20 @@
     </div>
 
     <script>
-        function mostarDetalles(idcategoria, nombre, descripcion) {
+        function mostarDetalles(idpedido, nombre, descripcion) {
             $('#actualizar').modal('show');
-            document.getElementById("idcategoria").value = idcategoria;
+            document.getElementById("idpedido").value = idpedido;
             document.getElementById("nombre").value = nombre;
             document.getElementById("descripcion").value = descripcion;
         }
     </script>
 
-    <!-- Actualizar categoria (Ventana modal) -->
-
+    <!-- Actualizar pedido (Ventana modal) -->
     <div class="modal" tabindex="-1" id="actualizar">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title borde-bottom-diseno">Actualizar categoria</h5>
+                    <h5 class="modal-title borde-bottom-diseno">Actualizar pedido</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -116,17 +114,15 @@
                 <form action="" method="POST">
                     <div class="modal-body">
                         <div class="form-group form-inline">
-                            <label>Nombre de la categoria</label>
-                            <input type="hidden" id="idcategoria" name="idcategoria">
+                            <label>Nombre de la pedido</label>
+                            <input type="hidden" id="idpedido" name="idpedido">
                             <input type="text" name="nombre" id="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off" style="max-width: 65%;">
                         </div>
-
                         <div class="form-group form-inline">
                             <label>Descripción</label>
 
                             <input type="text" name="descripcion" id="descripcion" class="form-control p2 mx-sm-3" required="">
                         </div>
-
                         <hr class="pt-4 mt-5">
                         <div class="form-row mt-4">
                             <div class="col-md-6 mb-3 pr-4">
@@ -143,11 +139,13 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-categoria.php">✚</a>
+    <a class="añadir" href="crear-pedido.php">✚</a>
+
+
+
 
     <!-- jQuery y Boostrao js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
@@ -164,20 +162,10 @@
         });
         sr.reveal('.container', {
             duration: 2000,
-            origin: 'top',
+            origin: 'left',
 
             distance: '-800px'
         });
-        //Efecto de aparicion
-        ScrollReveal().reveal('.card-img', {
-            delay: 500
-        });
-    </script>
-
-    <script>
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
     </script>
 </body>
 

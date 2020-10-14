@@ -16,8 +16,8 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Productos</a>
-                                <a class="dropdown-item" href="#">Categoria</a>
+                                <a class="dropdown-item" href="../almacen/productos.php">Productos</a>
+                                <a class="dropdown-item" href="../almacen/categorias.php">Categoria</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -28,8 +28,8 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ingresos</a>
-                                <a class="dropdown-item" href="#">Proveedores</a>
+                                <a class="dropdown-item" href="../compras/ingresos.php">Ingresos</a>
+                                <a class="dropdown-item" href="../compras/proveedores.php">Proveedores</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -40,9 +40,9 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Pedidos</a>
-                                <a class="dropdown-item" href="#">Clientes</a>
-                                <a class="dropdown-item" href="#">Sucursale</a>
+                                <a class="dropdown-item" href="../ventas/pedidos.php">Pedidos</a>
+                                <a class="dropdown-item" href="../ventas/clientes.php">Clientes</a>
+                                <a class="dropdown-item" href="../ventas/sucursales.php">Sucursale</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">
@@ -53,7 +53,7 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Usuarios</a>
+                                <a class="dropdown-item" href="../acceso/">Usuarios</a>
                             </div>
                         </li>
                     </ul>

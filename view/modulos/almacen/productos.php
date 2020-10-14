@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -16,7 +16,7 @@
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
     <?php include '../menu.php'; ?>
-
+    
     <div class="container">
         <div class="row">
             <div class="col">
@@ -34,13 +34,11 @@
                                 <input type="text" name="busqueda" id="busqueda" placeholder=" Realizar una búsqueda" title="Buscar" autocomplete="off">
                             </div>
                         </div>
-
                         <div class="container" id="alerta-no-results" style="display: none;max-width: 600px;">
                             <div class="alert alert-danger" role="alert">
                                 No hay resultados para mostrar
                             </div>
                         </div>
-
                         <div class="table-responsive" id="tabla">
                             <table class="table table-hover table-striped text-center">
                                 <thead>
@@ -96,7 +94,6 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -156,7 +153,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-prodcuto.php">✚</a>
+    <a class="añadir" href="crear-producto.php">✚</a>
 
     <!-- jQuery y Boostrao js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
