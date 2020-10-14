@@ -1,3 +1,16 @@
+echo "# SENASOFT2020" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/poppingxsoul/SENASOFT2020.git
+git push -u origin main
+
+
+git remote add origin https://github.com/poppingxsoul/SENASOFT2020.git
+git branch -M main
+git push -u origin main
+
 COMANDOS BASICOS 
 * git init Oye Git, voy a usar estos documentos contigo ¿vale?
 * git add <file> Pasa los docs a staging area 
