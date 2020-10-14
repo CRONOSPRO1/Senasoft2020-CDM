@@ -54,7 +54,7 @@ class producto
         $stmt->bindParam(':descripcion', $datos['descripcion'], PDO::PARAM_STR);
         $stmt->bindParam(':stock', $datos['stock'], PDO::PARAM_STR);
         /*en el caso de la imegen tu tienes otro manejo, si?  */
-        $stmt->bindParam(':imagen', $datos['imagen'], PDO::PARAM_STR);
+        $stmt->bindParam(':imagen', $datos['imagen'], PDO::PARAM_LOB);
         $stmt->bindParam(':disponibilidad', $datos['disponibilidad'], PDO::PARAM_STR);
         $stmt->execute();
         $stmt->closeCursor();

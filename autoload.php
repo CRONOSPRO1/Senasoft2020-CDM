@@ -1,5 +1,4 @@
 <?php 
-
 function controllers_autoload($classname){
     include'controller/'. $classname .'.php';
 }

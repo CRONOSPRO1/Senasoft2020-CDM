@@ -1,4 +1,5 @@
 <?php
+require_once 'config/parameters.php';
 class PrincipalController
 {
     public $model;
@@ -7,7 +8,7 @@ class PrincipalController
 
     public function __construct()
     {
-        $this->model = new model();
+        
         $this->session = session_start();
     }
     public function index(){

@@ -6,6 +6,6 @@
     <title>Inicio</title>
 </head>
 <body>
-    
+    <p>Hola</p>
 </body>
 </html>
