@@ -9,9 +9,6 @@
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-
     <title>Crear ingreso | Automatización y gestión Multitiendas</title>
 </head>
 
@@ -35,7 +32,7 @@
                     <hr class="pt-4 mt-5">
                     <div class="form-row mt-4">
                         <div class="col-md-6 mb-3 pr-4">
-                            <a href="<?= base_url ?>Administrador/pedidos" class="btn btn-danger form-control">Cancelar</a>
+                            <a href="<?= base_url ?>dashboard/pedidos" class="btn btn-danger form-control">Cancelar</a>
                         </div>
                         <div class="col-md-6 mb-3  pr-4">
                             <input class="btn btn-info form-control" value="Guardar" type="submit">

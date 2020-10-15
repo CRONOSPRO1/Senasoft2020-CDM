@@ -38,7 +38,7 @@
                     <hr class="pt-4 mt-5">
                     <div class="form-row mt-4">
                         <div class="col-md-6 mb-3 pr-4">
-                            <a href="<?= base_url ?>Administrador/categorias" class="btn btn-danger form-control">Cancelar</a>
+                            <a href="<?= base_url ?>dashboard/categorias" class="btn btn-danger form-control">Cancelar</a>
                         </div>
                         <div class="col-md-6 mb-3  pr-4">
                             <input class="btn btn-info form-control" value="Guardar" type="submit">

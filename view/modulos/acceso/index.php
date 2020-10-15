@@ -139,7 +139,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="<?= base_url ?>Administrador/crear_usuario">✚</a>
+    <a class="añadir" href="<?= base_url ?>dashboard/crear_usuario">✚</a>
 
 
 

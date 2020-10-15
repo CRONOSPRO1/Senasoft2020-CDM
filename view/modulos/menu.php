@@ -8,6 +8,10 @@
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
+    <link href="<?= base_url ?>assets/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>

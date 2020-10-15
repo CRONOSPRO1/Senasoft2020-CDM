@@ -12,12 +12,9 @@
     <title>Categorias | Automatización y gestión Multitiendas</title>
 </head>
 
-<body>
+<body>  
 
-    <!-- Incluimos el archivo de la barra superior con el método include de php -->
-  
-
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col">
                 <div class="card">
