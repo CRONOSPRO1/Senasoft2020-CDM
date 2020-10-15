@@ -2,16 +2,19 @@
 require_once 'config/parameters.php';
 require_once 'modelo/clin_pro.php';
 require_once 'modelo/Usuarios.php';
+require_once 'modelo/producto.php';
+
 class PrincipalController
 {
     public $model_clipro;
     public $model_admin;
-
+    public $model_producto;
 
     public function __construct()
     {
         $this->model_clipro = new clin_pro();
         $this->model_admin = new usuarios();
+        $this->model_producto = new producto();
     }
     public function index()
     {
@@ -88,5 +91,9 @@ class PrincipalController
                 }
             }
         }
+    }
+
+    public function facturapdf(){
+        require_once 'assets/pdf/factura.php';
     }
 }

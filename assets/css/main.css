@@ -2,6 +2,14 @@ body{
     background: url('../img/bg-white.jpg');
 }
 
+a{
+    text-decoration: none !important;
+}
+
+ul, ol{
+    list-style: none !important;
+}
+
 .añadir{
     font-size: 20px;
     background-color: #fff;

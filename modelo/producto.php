@@ -62,8 +62,9 @@ class producto
     
     public function listar_productos()
     {
+        $id = $_GET['Id'];
         $stmt = $this->conexion->conectar()->prepare
-        ("SELECT * FROM producto WHERE estado='1'");
+        ("SELECT * FROM producto WHERE estado='1 AND Id = $id");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
