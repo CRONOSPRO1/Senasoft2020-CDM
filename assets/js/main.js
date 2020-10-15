@@ -1,21 +1,40 @@
 
 // Creamos la función para el uso de los Tooltpis (Mensajes flotantes)
-$(function() {
-    $('[data-toggle="tooltip"]').tooltip()
+$(document).ready(function(){
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
 });
 
-// Definimos el uso del Framework Scroll Reveal 
-window.sr = ScrollReveal();
+//Usamos funciones especificas de jQuery para remover ciertos estilos y atributos
+//cuando el documento se cargue y pasen 500 ms para fijar estilos y la interfaz se visualice correctamente
+$(function () {
+    var contenedor = $("div").hasClass("container");
+    if (contenedor) {
+        setTimeout(function(){
+            $('#barra').removeAttr("style");
+        },500);
 
-// Definimos los paramtros que enviara a la clase para dar la interactividad
-sr.reveal('.navbar', {
-    duration: 800,
-    origin: 'bottom',
-    distance: '-100px'
+        setTimeout(function(){
+            $( ".container" ).css( "transition", "none" );
+        },500);
+    }
 });
-sr.reveal('.container', {
-    duration: 2000,
-    origin: 'right',
 
-    distance: '-800px'
+//Creamos la función click para abirar la venta de notificaciones y aplicamos estilos
+$("#notificacionesclick").click(function() {
+    var notiabiertas = document.getElementById("ventanaNotificaciones");
+    if (notiabiertas.style.display != 'none') {
+        notiabiertas.style.display = 'none';
+        document.getElementById("notificacionesclick").style.backgroundColor = 'transparent'
+        document.getElementById("notificacionesclick").style.fontSize = '15px';
+        document.getElementById("notificacionesclick").style.padding = '0'
+        $( "#span-margen" ).addClass("mr-4")
+
+    }else {
+        notiabiertas.style.display = 'block'
+        document.getElementById("notificacionesclick").style.backgroundColor = '#ececec'
+        document.getElementById("notificacionesclick").style.padding = '5px'
+        $( "#span-margen" ).removeClass( "mr-4" ).addClass("mr-3")
+    }
 });
