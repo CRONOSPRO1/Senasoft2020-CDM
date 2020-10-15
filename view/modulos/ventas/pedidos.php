@@ -139,7 +139,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-pedido.php">✚</a>
+    <a class="añadir" href="crear_pedido">✚</a>
 
 
 
