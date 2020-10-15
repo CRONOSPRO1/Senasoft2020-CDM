@@ -1,5 +1,5 @@
 <?php
-require_once'Model/Conexion.php';
+require_once'Modelo/Conexion.php';
 class model{
     public $conexion;
 

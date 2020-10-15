@@ -19,9 +19,6 @@
 
 
 
-    <?php include '../menu.php'; ?>
-
-
     <div class="container mb-5">
         <div class="row">
             <div class="col">
@@ -72,7 +69,7 @@
                                                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                                     </svg>
                                                 </span>
-                                                <a data-toggle="tooltip" data-placement="top" title="Actualizar" href="javascript:void(0)" onclick="mostarDetalles('','<?= $lista['nombre'] ?>','<?= $lista['email'] ?>','<?= $lista['identificacion'] ?>')" data-target="#actualizar">
+                                                <a data-toggle="tooltip" data-placement="top" title="Actualizar" href="javascript:void(0)" onclick="" data-target="#actualizar">
                                                     <span class="text-success">
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -139,20 +136,14 @@
     <a class="añadir" href="crear-usuario.php">✚</a>
 
 
-
-
     <!-- jQuery, Popper js y Boostrao js -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
-
+    <script src="<?=base_url?>/assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-
 
     <script>
         function mostarDetalles(nombre, email, identificacion) {
@@ -162,7 +153,6 @@
             document.getElementById("identificacion").value = identificacion;
         }
     </script>
-
 
     <script>
         window.sr = ScrollReveal();

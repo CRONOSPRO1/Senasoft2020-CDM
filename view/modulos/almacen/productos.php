@@ -15,8 +15,8 @@
 <body>
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
-    <?php include '../menu.php'; ?>
 
+    
     <div class="container">
         <div class="row">
             <div class="col">
@@ -34,13 +34,11 @@
                                 <input type="text" name="busqueda" id="busqueda" placeholder=" Realizar una búsqueda" title="Buscar" autocomplete="off">
                             </div>
                         </div>
-
                         <div class="container" id="alerta-no-results" style="display: none;max-width: 600px;">
                             <div class="alert alert-danger" role="alert">
                                 No hay resultados para mostrar
                             </div>
                         </div>
-
                         <div class="table-responsive" id="tabla">
                             <table class="table table-hover table-striped text-center">
                                 <thead>
@@ -96,7 +94,6 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -156,12 +153,13 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-prodcuto.php">✚</a>
-
-    <!-- jQuery y Boostrao js -->
+    <a class="añadir" href="crear-producto.php">✚</a>
+    
+    <!-- jQuery, Popper js y Boostrao js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="<?=base_url?>/assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
