@@ -43,7 +43,7 @@ class categoria{
     public function listar_categorias()
     {
         $stmt = $this->conexion->conectar()->prepare
-        ("SELECT * FROM categoria WHERE condicion=1");
+        ("SELECT * FROM categoria ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();

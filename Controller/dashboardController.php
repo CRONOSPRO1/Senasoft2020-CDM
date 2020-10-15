@@ -240,10 +240,17 @@ class dashboardController
     }
 
     public function guardar_producto(){
+        $this->datos['codigo']=$_POST['codigo'];
 
+        $this->datos['nombre']=$_POST['nombre'];
+        $this->datos['descripcion']=$_POST['descripcion'];
+        $this->datos['stock']=$_POST['stock'];
+
+        $this->model_producto->insertar($this->datos);
+        require_once'view/modulos/almacen/productos.php';
     }
     public function eliminar_producto(){
-    $this->datos['idproducto']=$_REQUEST['idp'];
+    $this->datos['idproducto']=$_REQUEST['id'];
     
     $this->model_producto->eliminar($this->datos);
 
@@ -251,6 +258,14 @@ class dashboardController
     }
     
     public function actualizar_producto(){
+        $this->datos['nombre']=$_POST['nombre'];
+       $this->datos['descripcion']=$_POST['descripcion'];
+       $this->datos['idproducto']=$_POST['idproducto'];
+       $this->datos['codigo']=$_POST['codigo'];
+       $this->datos['idcategoria']=$_POST['idcategoria'];
+       $this->model_producto->actualizar($this->datos);
     
+       require_once'view/modulos/almacen/productos.php';
+
     }
 }
