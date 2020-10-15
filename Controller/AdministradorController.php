@@ -40,7 +40,7 @@ require_once'view/modulos/almacen/productos.php';
     public function crear_categoria()
     {
         require_once 'view/modulos/almacen/crear-categoria.php';
-        echo "ruta categoria";
+
     }
     public function crear_producto()
     {
@@ -130,6 +130,9 @@ require_once'view/modulos/almacen/productos.php';
     }
     public function Actualizar_Usuario()
     {
+        if (!empty($_POST['idusuario']) && !empty($_POST['email'])) {
+            # code...
+        }
         $this->datos['idusuario'] = $_POST['idusuario'];
         $this->datos['direccion']       = $_POST['direccion'];
         $this->datos['telefono']        = $_POST['telefono'];
@@ -142,4 +145,42 @@ require_once'view/modulos/almacen/productos.php';
     public function notificarProducto(){
         $this->model_notificaciones->notificarProducto10();
     }
+    public function guardar_categorias(){
+        if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
+            $this->datos['descripcion']=$_POST['descripcion'];
+            $this->datos['nombre']=$_POST['nombre'];
+            $this->datos['condicion']=1;
+
+            $this->model_categoria->insertar($this->datos);
+            require_once'view/modulos/almacen/categoria.php';
+
+        }
+        
+    }
+    public function eliminarCa(){
+        if (!empty($_GET['id'])) {
+        $this->datos['id']=$_REQUEST['id'];
+        $this->model_categoria->eliminar($this->datos);
+
+        require_once'view/modulos/almacen/categorias.php';
+    }else{
+    require_once'view/modulos/almacen/categorias.php';}
+}
+    public function actualizar_categoria(){
+        if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
+            $this->datos['idcategoria']=$_POST['idcategoria'];
+            $this->datos['descripcion']=$_POST['descripcion'];
+            $this->datos['nombre']=$_POST['nombre'];
+            $this->datos['condicion']=1;
+
+            $this->model_categoria->actualizar($this->datos);
+            require_once'view/modulos/almacen/categorias.php';
+        }else{
+            echo'<script>alert("Debe llenar todos los campos")</script>';
+            require_once'view/modulos/almacen/categorias.php';
+        }
+    }
+    
+
+
 }
