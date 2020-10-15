@@ -21,20 +21,31 @@
                     <h4 class="text-secondary borde-bottom-diseno">Agregar producto</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <form action="" method="POST">
-                <div class="form-group form-inline">
-                        <label>Código de la categoria</label>
-                        <input type="number" name="codigo" class="form-control p2 mx-sm-3" required="" autocomplete="off">
-                    </div>
+                <form action="<?=base_url?>dashboard/guardar_producto" method="POST">
+                
 
                     <div class="form-group form-inline">
-                        <label>Nombre de la categoria</label>
+                        <label>Nombre del producto</label>
                         <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
-
+                    
+                        <div class="from group">
+                                <label class="mb-4">Categoria</label>                                
+                                <select name="idcategoria"  data-live-search="true" >
+                                
+                                    <?php //foreach ($this->model_categoria->listar_categorias() as $row):?>
+                                        <option value="">Categoria</option>                                
+                                    <?php //endforeach;?>
+                                </select>
+                            </div>
+    
                     <div class="form-group form-inline">
                         <label>Descripción</label>
                         <input type="text" name="descripcion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>Codigo</label>
+                        <input type="text" name="codigo" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
@@ -44,7 +55,7 @@
 
                     <div class="form-group form-inline">
                         <label>Imagen</label>
-                        <input type="file" name="imagen" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="file" name="imagen" class="form-control p2 mx-sm-3"  autocomplete="off">
                     </div>
 
                     <hr class="pt-4 mt-5">

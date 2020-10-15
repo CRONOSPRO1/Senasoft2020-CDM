@@ -88,7 +88,7 @@
                                         <td><?=$lista['stock']?></td>
                                         <td><img src=".." alt="Imagen del producto" loading="lazy"></td>
                                         <td>
-                                            <a href="<?=base_url?>dashboard/eliminar_producto" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                                            <a href="<?=base_url?>dashboard/eliminar_producto&id=<?=$lista['idproducto']?>" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
                                                 <span class="text-danger">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -96,7 +96,7 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idproducto'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idproducto'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>','<?= $lista['idcategoria'] ?>','<?= $lista['codigo'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
                                                 <span class="text-success">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -117,11 +117,14 @@
     </div>
 
     <script>
-        function mostarDetalles(idproducto, nombre, descripcion) {
+        function mostarDetalles(idproducto, nombre, descripcion,idcategoria,codigo) {
             $('#actualizar').modal('show');
             document.getElementById("idproducto").value = idproducto;
             document.getElementById("nombre").value = nombre;
             document.getElementById("descripcion").value = descripcion;
+            document.getElementById("idcategoria").value=idcategoria;
+            document.getElementById("codigo").value=codigo;
+
         }
     </script>
 
@@ -136,20 +139,30 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="POST">
+                <form action="<?=base_url?>dashboard/actualizar_producto" method="POST">
                     <div class="modal-body">
                         <div class="form-group form-inline">
                             <label>Nombre de la producto</label>
                             <input type="hidden" id="idproducto" name="idproducto">
                             <input type="text" name="nombre" id="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off" style="max-width: 65%;">
                         </div>
-
                         <div class="form-group form-inline">
                             <label>Descripción</label>
 
                             <input type="text" name="descripcion" id="descripcion" class="form-control p2 mx-sm-3" required="">
                         </div>
-
+                        <div class="form-group form-inline">
+                            <label>Id categoria</label>
+                            
+                            <input type="text" name="idcategoria" id="idcategoria" class="form-control p2 mx-sm-3" required="" autocomplete="off" style="max-width: 65%;">
+                        </div>
+                        <div class="form-group form-inline">
+                            <label>Codigo</label>
+                            
+                            <input type="text" name="codigo" id="codigo" class="form-control p2 mx-sm-3" required="" autocomplete="off" style="max-width: 65%;">
+                        </div>
+                       
+            
                         <hr class="pt-4 mt-5">
                         <div class="form-row mt-4">
                             <div class="col-md-6 mb-3 pr-4">

@@ -98,7 +98,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url ?>dashboard/Actualizar_Usuario" method="POST">
+                <form action="<?= base_url ?>dashboard/Actualizar_producto" method="POST">
                     <input type="hidden" id="idusuario" name="idusuario">
                     <div class="modal-body">
                         <div class="form-group form-inline">

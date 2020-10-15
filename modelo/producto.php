@@ -12,17 +12,14 @@ class producto
     {
         $stmt = $this->conexion->conectar()->prepare
         /* El campo idproducto es autoincremental, el campo estado esta por defaul '1' */ 
-        ("INSERT INTO producto (idcategoria,codigo,nombre,descripcion,stock,imagen,disponibilidad)
-        values(:idcategoria,:codigo,:nombre,:descripcion,:stock,:imagen,:disponibilidad) ");
+        ("INSERT INTO producto (codigo,nombre,descripcion,stock)
+        values(:codigo,:nombre,:descripcion,:stock) ");
 
-        $stmt->bindParam(':idcategoria', $datos['idcategoria'], PDO::PARAM_STR);
         $stmt->bindParam(':codigo', $datos['codigo'], PDO::PARAM_STR);
         $stmt->bindParam(':nombre', $datos['nombre'], PDO::PARAM_STR);
         $stmt->bindParam(':descripcion', $datos['descripcion'], PDO::PARAM_STR);
         $stmt->bindParam(':stock', $datos['stock'], PDO::PARAM_STR);
         /*en el caso de la imegen tu tienes otro manejo, si?  */
-        $stmt->bindParam(':imagen', $datos['imagen'], PDO::PARAM_STR);
-        $stmt->bindParam(':disponibilidad', '1', PDO::PARAM_STR);
 
         $stmt->execute();
         $stmt->closeCursor();
@@ -30,7 +27,7 @@ class producto
 
     public function eliminar($datos)
     {
-        $stmt = $this->conexion->conectar()->prepare("UPDATE producto SET condicion=0 where idproducto=:idproducto");
+        $stmt = $this->conexion->conectar()->prepare("UPDATE producto SET estado=0 where idproducto=:idproducto");
         $stmt->bindParam(':idproducto', $datos['idproducto'], PDO::PARAM_STR);
         $stmt->execute();
         $stmt->closeCursor();
@@ -38,24 +35,16 @@ class producto
     public function actualizar($datos)
     {
         $stmt = $this->conexion->conectar()->prepare
-        ("UPDATE producto SET 
-        idcategoria=:idcategoria,
-        codigo=:codigo,
-        nombre=:nombre,
-        descripcion=:descripcion,
-        stock=:stock,
+        ("UPDATE producto SET  codigo=:codigo, nombre=:nombre, descripcion=:descripcion
+ 
         /* en este caso tu manejas el tema de subir las imagenes al directorio, vale? */
-        imagen=:imagen,
-        disponibilidad=:disponibilidad
         WHERE idproducto=:idproducto ");
-        $stmt->bindParam(':idcategoria', $datos['idcategoria'], PDO::PARAM_STR);
         $stmt->bindParam(':codigo', $datos['codigo'], PDO::PARAM_STR);
         $stmt->bindParam(':nombre', $datos['nombre'], PDO::PARAM_STR);
         $stmt->bindParam(':descripcion', $datos['descripcion'], PDO::PARAM_STR);
-        $stmt->bindParam(':stock', $datos['stock'], PDO::PARAM_STR);
+        $stmt->bindParam(':idproducto', $datos['idproducto'], PDO::PARAM_STR);
         /*en el caso de la imagen tu tienes otro manejo, si?  */
-        $stmt->bindParam(':imagen', $datos['imagen'], PDO::PARAM_LOB);
-        $stmt->bindParam(':disponibilidad', $datos['disponibilidad'], PDO::PARAM_STR);
+
         $stmt->execute();
         $stmt->closeCursor();
     }
