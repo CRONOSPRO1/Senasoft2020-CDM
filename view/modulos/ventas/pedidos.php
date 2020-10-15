@@ -16,7 +16,7 @@
 
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
-    <?php include '../menu.php'; ?>
+
 
     <div class="container">
         <div class="row">
