@@ -32,7 +32,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?=base_url?>Administrador/productos">Productos</a>
-                                <a class="dropdown-item" href="<?=base_url?>Administrador/categorias.php">Categoria</a>
+                                <a class="dropdown-item" href="<?=base_url?>Administrador/categorias">Categoria</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -56,8 +56,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?=base_url?>Administrador/pedidos">Pedidos</a>
-                                <a class="dropdown-item" href="<?=base_url?>clientes">Clientes</a>
-                                <a class="dropdown-item" href="<?=base_url?>sucursales">Sucursale</a>
+                                <a class="dropdown-item" href="<?=base_url?>Administrador/clientes">Clientes</a>
+                                <a class="dropdown-item" href="<?=base_url?>Administrador/sucursales">Sucursale</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">
