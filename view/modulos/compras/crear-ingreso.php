@@ -43,7 +43,7 @@
                 </form> -->
 
                 <div class="content">
-                   
+
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="from group">
                             <label>Proveedor</label>
@@ -53,41 +53,41 @@
                         </div>
                     </div>
                     <div class="row py-5 px-4">
-                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                        <div class="from group">
-                            <label>Producto</label>
-                            <select name="pidproducto" id="pidproducto" class="form-control p pb-4" data-live-search="true">
-                                <option value=""> .</option>
-                            </select>
+                        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                            <div class="from group">
+                                <label>Producto</label>
+                                <select name="pidproducto" id="pidproducto" class="form-control p pb-4" data-live-search="true">
+                                    <option value=""> .</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-                        <div class="form-group">
-                            <label for="">Cantidad</label>
-                            <input type="number" name="pcantidad" id="pcantidad" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
+                            <div class="form-group">
+                                <label for="">Cantidad</label>
+                                <input type="number" name="pcantidad" id="pcantidad" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-                        <div class="form-group">
-                            <label for="">Precio de costo</label>
-                            <input type="number" name="pcosto" id="pcosto" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
+                            <div class="form-group">
+                                <label for="">Precio de costo</label>
+                                <input type="number" name="pcosto" id="pcosto" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-                        <div class="form-group">
-                            <label for="">Precio de venta</label>
-                            <input type="number" name="pprecio" id="pprecio" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
+                            <div class="form-group">
+                                <label for="">Precio de venta</label>
+                                <input type="number" name="pprecio" id="pprecio" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
-                        <div class="form-group">
-                        <label for="" class="px-5 pb-3"> </label>
-                            <button type="button" id="bt_add" class="btn btn-outline-dark">Agregar</button>
+                        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
+                            <div class="form-group">
+                                <label for="" class="px-5 pb-3"> </label>
+                                <button type="button" id="bt_add" class="btn btn-outline-dark">Agregar</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
@@ -102,23 +102,29 @@
                                 <th>SubTotal</th>
                             </thead>
                             <td>
-                                <th>Total</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>
-                                    <h4 id="total">$0.00</h4>
-                                </th>
+                            <th>Total</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                <h4 id="total">$0.00</h4>
+                            </th>
                             </td>
                             <tbody>
-
                             </tbody>
                         </table>
-
                     </div>
                 </div>
 
-
+                <hr class="pt-4 mt-5">
+                <div class="form-row mt-4">
+                    <div class="col-md-6 mb-3 pr-4">
+                        <a href="#" class="btn btn-danger form-control">Cancelar</a>
+                    </div>
+                    <div class="col-md-6 mb-3  pr-4">
+                        <input class="btn btn-info form-control" value="Guardar" type="submit">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
