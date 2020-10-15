@@ -40,6 +40,7 @@
                 </form> -->
 
                 <div class="content">
+<<<<<<< HEAD
                     <div class="row pb-5 px-4">
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                             <div class="from group">
@@ -51,17 +52,36 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+=======
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="from group">
+                            <label>Proveedor</label>
+                            <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
+                                <?php foreach ($this->model_clipro->listar('Proveedor') as $row):?>
+                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']. " "?><?=$row['Apellido']. " "?></option>
+                                <?php endforeach;?>
+                            </select>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                         </div>
                     </div>
                     <div class="row pb-5 px-4">
                         <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
                             <div class="from group">
+<<<<<<< HEAD
                                 <label class="mb-4">Producto</label>
                                 <select name="pidproducto" id="pidproducto" class="form-control p p-0" data-live-search="true" required="">
                                     <option value=" "> </option>
                                     <?php foreach ($this->model_producto->listar_productos() as $row) : ?>
                                         <option value="<?= $row['idproducto'] ?>"><?= $row['nombre'] ?></option>
                                     <?php endforeach; ?>
+=======
+                                <label class="mb-4">Producto</label>                                
+                                <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
+                                    <?php foreach ($this->model_producto->listar_productos() as $row):?>
+                                        <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
+                                    <?php endforeach;?>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                                 </select>
                             </div>
                         </div>
@@ -95,6 +115,7 @@
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<<<<<<< HEAD
                         <div class="table-responsive">
                             <table id="detalles" class="table table-striped table-hover">
                                 <thead>
@@ -111,6 +132,31 @@
                                     </tbody>
                             </table>
                         </div>
+=======
+
+                        <table id="detalles" class="table table-striped table-hover">
+                            <thead>
+                                <th>Opciones</th>
+                                <th>Artículo</th>
+                                <th>Cantidad</th>
+                                <th>Costo</th>
+                                <th>Precio</th>
+                                <th>SubTotal</th>
+                            </thead>
+                            <td>
+                            <th>Total</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                <h4 id="total">$0.00</h4>
+                            </th>
+                            </td>
+                            <tbody>
+                            </tbody>
+                        </table>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                     </div>
                 </div>
 

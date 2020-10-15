@@ -21,7 +21,7 @@
                     <h4 class="text-secondary borde-bottom-diseno">Agregar proveedor</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <form action="" method="POST">
+                <form action="<?=base_url?>dashboard/guardar_proveedor" method="POST">
                     <div class="form-group form-inline">
                         <label>Nombre del proveedor</label>
                         <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
@@ -29,7 +29,7 @@
 
                     <div class="form-group form-inline">
                         <label>Apellidos del proveedor</label>
-                        <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="text" name="Apellido" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
@@ -39,7 +39,7 @@
 
                     <div class="form-group form-inline">
                         <label>Tipo de documento</label>
-                        <select class="form-control" required id="tipo_documento">
+                        <select name = "tipo_documento" class="form-control" required id="tipo_documento">
                             <option value=""></option>
                             <option>Cédula de ciudadania</option>
                             <option>Tarjeta de identidad</option>
@@ -48,7 +48,7 @@
 
                     <div class="form-group form-inline">
                         <label>Número de identificación</label>
-                        <input type="number" name="identificacion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="number" name="no_documento" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
