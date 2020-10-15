@@ -66,10 +66,4 @@ if (class_exists($nombre_controlador)) {
     echo 'La pagina que buscas no existe';
 }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 6cee89197594aa7ea3252a1d46e98ff0f160ccbb
 ?>
