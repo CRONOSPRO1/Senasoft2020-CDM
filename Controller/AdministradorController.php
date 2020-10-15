@@ -12,7 +12,7 @@ class AdministradorController
     public $model_admin;
     public $model_producto;
     public $model_categoria;
-    public $modle_notificaciones;
+    public $model_notificaciones;
 
     public function __construct()
     {
