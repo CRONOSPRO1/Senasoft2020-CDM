@@ -47,8 +47,9 @@ class clin_pro{
         $stmt->closeCursor();
     }
 
-    public function listar(){
-        $stmt=$this->conexion->conectar()->prepare("SELECT FROM clin_pro ");
+    public function listar($tipo){
+        $stmt=$this->conexion->conectar()->prepare("SELECT * FROM clin_pro WHERE tipo=:tipo");
+        $stmt->bindParam(":tipo",$tipo,PDO::PARAM_STR);
         $stmt->execute();
         $stmt->closeCursor();
     }

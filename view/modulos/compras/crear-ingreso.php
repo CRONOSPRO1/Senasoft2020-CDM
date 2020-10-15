@@ -24,7 +24,7 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
-                    <h4 class="text-secondary borde-bottom-diseno">Agregar ingreso</h4>
+                    <h4 class="text-secondary borde-bottom-diseno">Agregar Compra</h4>
                     <hr class="pb-2 pt-2">
                 </div>
                 <!-- <form action="" method="POST">
@@ -50,17 +50,21 @@
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="from group">
                             <label>Proveedor</label>
-                            <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true">
-                                <option value=""> .</option>
+                            <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
+                                <?php foreach ($this->model_clin_pro->listar('Proveedor') as $row):?>
+                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                     </div>
                     <div class="row py-5 px-4">
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="from group">
-                                <label class="mb-4">Producto</label>
-                                <select name="pidproducto" id="pidproducto" class="form-control p pb-4" data-live-search="true">
-                                    <option value=""> .</option>
+                                <label class="mb-4">Producto</label>                                
+                                <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
+                                    <?php foreach ($this->model_producto->listar_productos() as $row):?>
+                                        <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                         </div>
@@ -106,6 +110,7 @@
                             </thead>
                             <td>
                             <th>Total</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
