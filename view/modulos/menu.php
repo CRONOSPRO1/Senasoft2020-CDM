@@ -104,7 +104,7 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/pedidos.php">Pedidos</a>
+                                <a class="dropdown-item" href="<?= base_url ?>Administrador/pedidos">Pedidos</a>
                                 <a class="dropdown-item" href="<?= base_url ?>Administrador/clientes">Clientes</a>
                                 <a class="dropdown-item" href="<?= base_url ?>Administrador/sucursales">Sucursale</a>
                             </div>
