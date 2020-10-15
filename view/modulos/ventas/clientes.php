@@ -95,7 +95,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-cliente.php">✚</a>
+    <a class="añadir" href="crear_cliente">✚</a>
 
 
 

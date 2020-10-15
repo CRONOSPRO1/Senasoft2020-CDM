@@ -143,7 +143,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-categoria.php">✚</a>
+    <a class="añadir" href="crear_categoria">✚</a>
 
     <!-- jQuery, Popper js y Boostrao js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
