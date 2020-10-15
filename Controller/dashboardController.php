@@ -221,17 +221,21 @@ class dashboardController
     }
     public function actualizar_proveedor()
     {
-        if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
-            $this->datos['idcategoria'] = $_POST['idcategoria'];
-            $this->datos['descripcion'] = $_POST['descripcion'];
+        if (!empty($_POST['id']) && !empty($_POST['Apellido']) && $_POST['tipo_documento'] && !empty($_POST['direccion']) && !empty($_POST['telefono']) && !empty($_POST['email'])) {
+            
+            $this->datos['id'] = $_POST['id'];
             $this->datos['nombre'] = $_POST['nombre'];
-            $this->datos['condicion'] = 1;
+            $this->datos['Apellido'] = $_POST['Apellido'];
+            $this->datos['tipo_documento'] = $_POST['tipo_documento'];
+            $this->datos['direccion'] = $_POST['direccion'];
+            $this->datos['telefono'] = $_POST['telefono'];
+            $this->datos['email'] = $_POST['email'];
 
             $this->model_clipro->actualizar($this->datos);
-            require_once 'view/modulos/almacen/categorias.php';
+            require_once 'view/modulos/compras/proveedores.php';
         } else {
             echo '<script>alert("Debe llenar todos los campos")</script>';
-            require_once 'view/modulos/almacen/categorias.php';
+            require_once 'view/modulos/compras/proveedores.php';
         }
     }
 

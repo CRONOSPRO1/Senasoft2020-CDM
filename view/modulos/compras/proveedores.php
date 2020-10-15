@@ -63,7 +63,7 @@
                                 <?php foreach ($this->model_clipro->listar('Proveedor') as $lista):?>
 
                                     <tr>
-                                        <td><?=$lista['nombre']." "?><?=$lista['nombre']." "?></td>
+                                        <td><?=$lista['nombre']." "?><?=$lista['Apellido']." "?></td>
                                         <td><?=$lista['email']?></td>
                                         <td><?=$lista['no_documento']?></td>
                                         <td><?=$lista['direccion']?></td>
@@ -78,7 +78,7 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['id'] ?>','<?= $lista['nombre'] ?>','<?= $lista['Apellido'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['id'] ?>','<?= $lista['nombre'] ?>','<?= $lista['Apellido'] ?>','<?= $lista['email'] ?>','<?= $lista['tipo_documento'] ?>','<?= $lista['no_documento'] ?>','<?= $lista['telefono'] ?>','<?= $lista['direccion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
                                                 <span class="text-success">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -103,12 +103,21 @@
     </div>
 
     <script>
-        function mostarDetalles(id, nombre, Apellido) {
+        function mostarDetalles(id, nombre, Apellido,email,tipo_documento,no_documento,telefono,direccion) {
             $('#actualizar').modal('show');
-            document.getElementById("idproveedor").value = idproveedor;
+            document.getElementById("id").value = id;
             document.getElementById("nombre").value = nombre;
             document.getElementById("Apellido").value = Apellido;
+            document.getElementById("email").value = email;
+            document.getElementById("tipo_documento").value = tipo_documento;
+            document.getElementById("no_documento").value = no_documento;
+            document.getElementById("telefono").value = telefono;
+            document.getElementById("direccion").value = direccion;
+            
+            
+            // alert(no_documento);
         }
+        
     </script>
 
     <!-- Actualizar proveedor (Ventana modal) -->
@@ -132,17 +141,17 @@
 
                         <div class="form-group form-inline">
                         <label>Apellidos del proveedor</label>
-                        <input type="text" name="Apellido" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="text" name="Apellido" id="Apellido" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
                         <label>Email</label>
-                        <input type="email" name="email" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="email" name="email" id="email" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
                         <label>Tipo de documento</label>
-                        <select name = "tipo_documento" class="form-control" required id="tipo_documento">
+                        <select name = "tipo_documento" id = "tipo_documento" class="form-control" required id="tipo_documento">
                             <option value=""></option>
                             <option>Cédula de ciudadania</option>
                             <option>Tarjeta de identidad</option>
@@ -151,17 +160,17 @@
 
                     <div class="form-group form-inline">
                         <label>Número de identificación</label>
-                        <input type="number" name="no_documento" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="number" name="no_documento" id="no_documento" class="form-control p2 mx-sm-3" required="" autocomplete="off" readonly>
                     </div>
 
                     <div class="form-group form-inline">
                         <label>Número telefonico</label>
-                        <input type="number" name="telefono" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="number" name="telefono" id="telefono" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <div class="form-group form-inline">
                         <label>Dirección</label>
-                        <input type="text" name="direccion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="text" name="direccion" id="direccion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                         <hr class="pt-4 mt-5">
