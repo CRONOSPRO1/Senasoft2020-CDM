@@ -21,11 +21,7 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
-<<<<<<< HEAD
                     <h4 class="text-secondary borde-bottom-diseno">Agregar Compra</h4>
-=======
-                    <h4 class="text-secondary borde-bottom-diseno">Agregar ingreso</h4>
->>>>>>> 4183c973f22403f359e87f731a5870d0aad627db
                     <hr class="pb-2 pt-2">
                 </div>
                 <!-- <form action="" method="POST">
@@ -51,17 +47,21 @@
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="from group">
                             <label>Proveedor</label>
-                            <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true">
-                                <option value=""> .</option>
+                            <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
+                                <?php foreach ($this->model_clin_pro->listar('Proveedor') as $row):?>
+                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                     </div>
                     <div class="row py-5 px-4">
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="from group">
-                                <label class="mb-4">Producto</label>
-                                <select name="pidproducto" id="pidproducto" class="form-control p pb-4" data-live-search="true">
-                                    <option value=""> .</option>
+                                <label class="mb-4">Producto</label>                                
+                                <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
+                                    <?php foreach ($this->model_producto->listar_productos() as $row):?>
+                                        <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                         </div>
@@ -110,6 +110,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
+                            <th></th>
                             <th>
                                 <h4 id="total">$0.00</h4>
                             </th>
@@ -140,6 +141,80 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="<?= base_url ?>/assets/js/main.js"></script>
 
+    <script>
+         
+        $(document).ready(function(){
+            $('#bt_add').click(function(){
+              agregar();
+            });
+          });
+        
+        
+        
+        var cont=0;
+        total=0;
+        /*este subtotal va a capturar todos los subtotales de las filas de los detalles */
+        subtotal=[];
+        
+        function agregar()
+        {
+            idproducto=$("#pidproducto").val();
+            /*El valor que este seleccionado el texto*/
+            producto=$("#pidproducto option:selected").text();
+            cantidad=$("#pcantidad").val();
+            costo=$("#pcosto").val();
+            precio=$("#pprecio").val();
+            /*Validamos que los valores sean diferentes de vacio y cantidad mayor a cero*/
+               if ( idproducto != "" && cantidad != "" && cantidad > 0 && costo != "" && precio != ""){
+            subtotal[cont] = ( cantidad * precio ) ;
+            total = total + subtotal[cont] ;
+            var    fila = '<tr class="selected" id="fila' + cont + '">' ;
+            fila = fila + '<td><button type="button" class="btn btn-warning" onclick="eliminar(' + cont + ');">X</td>' ;
+            fila = fila + '<td><input type="hidden" name="idproducto[]" value="' + idproducto + '">' + producto + '</td>' ;
+            fila = fila + '<td><input type="number" name="cantidad[]" value="' + cantidad + '"></td>' ;
+            fila = fila + '<td><input type="number" name="costo[]" value="' + costo + '"></td>' ;
+            fila = fila + '<td><input type="number" name="precio[]" value="' + precio + '"></td>' ;
+            fila = fila + '<td>' + subtotal[cont] + '</td>' ;
+            fila = fila + '</tr>' ;
+            cont++;
+            limpiar();
+            $("#total").html("S/ "+total);
+            evaluar();
+            $("#detalles").append(fila) ;
+        }else{
+            alert("Error al ingresar el detalle de ingreso. Revise los datos del árticulo.") ;
+        }
+            
+        }
+        
+        function limpiar(){
+            $("#pcantidad").val("");
+            $("#pcosto").val("");
+            $("#pprecio").val("");
+        }
+        function evaluar()
+        {
+            if (total>0)
+                {
+                  /*el div guardar se va a visualizar con el metodo show de jq caundo si tengo detalles en los input */  
+                    $("#guardar").show();
+                }
+            else
+            {
+                /*el div guardar se va a esconder con el metodo hide de jq cuando NO tengo detalles en los input */
+                $("#guardar").hide();
+            }
+        }
+        function eliminar(index){
+            total=total-subtotal[index];
+            $("#total").html("$/. " +total);
+            $("#fila" + index).remove();
+            evaluar();
+            
+            
+           // $("#fila"+ index).remove("#fila"+ index); 
+        }
+    </script>
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
 

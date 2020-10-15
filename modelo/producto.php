@@ -53,7 +53,7 @@ class producto
         $stmt->bindParam(':nombre', $datos['nombre'], PDO::PARAM_STR);
         $stmt->bindParam(':descripcion', $datos['descripcion'], PDO::PARAM_STR);
         $stmt->bindParam(':stock', $datos['stock'], PDO::PARAM_STR);
-        /*en el caso de la imegen tu tienes otro manejo, si?  */
+        /*en el caso de la imagen tu tienes otro manejo, si?  */
         $stmt->bindParam(':imagen', $datos['imagen'], PDO::PARAM_LOB);
         $stmt->bindParam(':disponibilidad', $datos['disponibilidad'], PDO::PARAM_STR);
         $stmt->execute();
@@ -62,9 +62,9 @@ class producto
     
     public function listar_productos()
     {
-        $id = $_GET['Id'];
+        // $id = $_GET['Id'];
         $stmt = $this->conexion->conectar()->prepare
-        ("SELECT * FROM producto WHERE estado='1 AND Id = $id");
+        ("SELECT * FROM producto WHERE estado='1'");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
