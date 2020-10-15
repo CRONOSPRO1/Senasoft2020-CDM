@@ -28,10 +28,10 @@
                         <h4 class="text-muted pb-4 borde-bottom-diseno">Iniciar sesión</h4>
                         <div class="form-group">
                             <form action="<?=base_url?>Principal/validar" method="POST">
-                                <input type="number" name="no_documento" class="form-control p pb-4" placeholder="Usuario">
+                                <input type="number" name="no_documento" class="form-control p pb-4" placeholder="Usuario" required="">
                         </div>
                         <div class="form-group pt-1">
-                            <input type="password" name="clave" class="form-control p pb-4" placeholder="Contraseña">
+                            <input type="password" name="clave" class="form-control p pb-4" placeholder="Contraseña" required="">
                         </div>
                         <div class="form-group pt-3">
                             <input type="submit" class="form-control btn btn-outline-dark" value="Iniciar sesión">

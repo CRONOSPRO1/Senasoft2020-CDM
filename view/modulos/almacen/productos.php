@@ -176,19 +176,16 @@
         sr.reveal('.container', {
             duration: 2000,
             origin: 'right',
-
             distance: '-800px'
         });
         //Efecto de aparicion
         ScrollReveal().reveal('.card-img', {
             delay: 500
         });
-    </script>
 
-    <script>
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+        sr.reveal('.ventana-notificaciones', {
+            delay: 500
+        });
     </script>
 </body>
 
