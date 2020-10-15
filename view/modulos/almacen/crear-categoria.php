@@ -15,7 +15,7 @@
 <body>
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
-    <?php include '../menu.php'; ?>
+
 
     <div class="container">
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 900px; margin: 0 auto;">

@@ -15,8 +15,7 @@ class ingreso
         /* Inicio Transacción */
         $stmt->beginTransaction();
 
-        try {
-    
+        try {    
             $stmt->bindParam(':idproveedor', $datos['idproveedor'], PDO::PARAM_STR);
             $stmt->bindParam(':tipo_soporte', $datos['tipo_soporte'], PDO::PARAM_STR);
             $stmt->bindParam(':idproveedor', $datos['idproveedor'], PDO::PARAM_STR);
@@ -25,7 +24,6 @@ class ingreso
             $stmt->execute();
             $stmt->closeCursor();
             
-
             /* Aqui hacemos referencia al modelo detalle de ingreso y traemos los detalles de la 
             compra que llegan por array desde el formulario*/            
             $stmt->bindParam($idproducto, $datos['idproducto'], PDO::PARAM_STR);

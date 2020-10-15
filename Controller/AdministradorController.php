@@ -1,19 +1,17 @@
 <?php
 require_once 'config/parameters.php';
 require_once 'modelo/clin_pro.php';
-require_once 'modelo/usuarios.php';
+require_once 'modelo/Usuarios.php';
 class AdministradorController
 {
     public $model_clipro;
     public $model_admin;
 
 
-    public function __construct()
+    public function __constructuct()
     {
-        $this->model_clipro;
-        new clin_pro();
-        $this->model_admin;
-        new usuarios();
+        $this->model_clipro = new clin_pro();
+        $this->model_admin = new usuarios();
     }
     public function index()
     {
