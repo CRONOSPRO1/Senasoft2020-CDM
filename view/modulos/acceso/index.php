@@ -34,7 +34,7 @@
                             </div>
                         </div>
 
-                        <div class="container" id="alerta-no-results" style="display: none;max-width: 600px;">
+                        <div class="container-fluid" id="alerta-no-results" style="display: none;max-width: 600px;">
                             <div class="alert alert-danger" role="alert">
                                 No hay resultados para mostrar
                             </div>

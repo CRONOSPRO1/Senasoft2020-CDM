@@ -18,29 +18,10 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
-                    <h4 class="text-secondary borde-bottom-diseno">Agregar Compra</h4>
+                    <h4 class="text-secondary borde-bottom-diseno">Agregar ingreso</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <!-- <form action="" method="POST">
-                    <div class="form-group form-inline">
-                        <label>Número soporte</label>
-                        <input type="number" name="no_soporte" class="form-control p2 mx-sm-3" required="" autocomplete="off">
-                    </div>
-
-
-                    <hr class="pt-4 mt-5">
-                    <div class="form-row mt-4">
-                        <div class="col-md-6 mb-3 pr-4">
-                            <a href="#" class="btn btn-danger form-control">Cancelar</a>
-                        </div>
-                        <div class="col-md-6 mb-3  pr-4">
-                            <input class="btn btn-info form-control" value="Guardar" type="submit">
-                        </div>
-                    </div>
-                </form> -->
-
                 <div class="content">
-<<<<<<< HEAD
                     <div class="row pb-5 px-4">
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                             <div class="from group">
@@ -52,36 +33,17 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-=======
-
-                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                        <div class="from group">
-                            <label>Proveedor</label>
-                            <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
-                                <?php foreach ($this->model_clipro->listar('Proveedor') as $row):?>
-                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']. " "?><?=$row['Apellido']. " "?></option>
-                                <?php endforeach;?>
-                            </select>
->>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                         </div>
                     </div>
                     <div class="row pb-5 px-4">
                         <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
                             <div class="from group">
-<<<<<<< HEAD
                                 <label class="mb-4">Producto</label>
                                 <select name="pidproducto" id="pidproducto" class="form-control p p-0" data-live-search="true" required="">
                                     <option value=" "> </option>
                                     <?php foreach ($this->model_producto->listar_productos() as $row) : ?>
                                         <option value="<?= $row['idproducto'] ?>"><?= $row['nombre'] ?></option>
                                     <?php endforeach; ?>
-=======
-                                <label class="mb-4">Producto</label>                                
-                                <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
-                                    <?php foreach ($this->model_producto->listar_productos() as $row):?>
-                                        <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
-                                    <?php endforeach;?>
->>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                                 </select>
                             </div>
                         </div>
@@ -115,7 +77,6 @@
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-<<<<<<< HEAD
                         <div class="table-responsive">
                             <table id="detalles" class="table table-striped table-hover">
                                 <thead>
@@ -132,38 +93,13 @@
                                     </tbody>
                             </table>
                         </div>
-=======
-
-                        <table id="detalles" class="table table-striped table-hover">
-                            <thead>
-                                <th>Opciones</th>
-                                <th>Artículo</th>
-                                <th>Cantidad</th>
-                                <th>Costo</th>
-                                <th>Precio</th>
-                                <th>SubTotal</th>
-                            </thead>
-                            <td>
-                            <th>Total</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>
-                                <h4 id="total">$0.00</h4>
-                            </th>
-                            </td>
-                            <tbody>
-                            </tbody>
-                        </table>
->>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                     </div>
                 </div>
 
                 <hr class="pt-4 mt-5">
                 <div class="form-row mt-4">
                     <div class="col-md-6 mb-3 pr-4">
-                        <a href="<?= base_url ?>dashboard/ingreso" class="btn btn-danger form-control">Cancelar</a>
+                        <a href="<?= base_url ?>dashboard/ingresos" class="btn btn-danger form-control">Cancelar</a>
                     </div>
                     <div class="col-md-6 mb-3  pr-4">
                         <input class="btn btn-info form-control" value="Guardar" type="submit">
@@ -184,7 +120,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?= base_url ?>/assets/js/main.js"></script>
+    <script src="<?= base_url ?>assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>

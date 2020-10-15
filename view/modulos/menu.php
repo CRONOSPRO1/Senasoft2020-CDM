@@ -110,7 +110,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?= base_url ?>dashboard/pedidos">Pedidos</a>
                                 <a class="dropdown-item" href="<?= base_url ?>dashboard/clientes">Clientes</a>
-                                <a class="dropdown-item" href="<?= base_url ?>dashboard/sucursales">Sucursale</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/sucursales">Sucursales</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">

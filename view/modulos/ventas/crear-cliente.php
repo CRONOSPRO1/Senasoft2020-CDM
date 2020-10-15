@@ -14,8 +14,6 @@
 
 <body>
 
-
-
     <div class="container">
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 900px; margin: 0 auto;">
             <div class="card-body">
@@ -87,7 +85,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?= base_url ?>/assets/js/main.js"></script>
+    <script src="<?= base_url ?>assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>

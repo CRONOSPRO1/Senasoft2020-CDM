@@ -53,7 +53,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?=base_url?>/assets/js/main.js"></script>
+    <script src="<?=base_url?>assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
