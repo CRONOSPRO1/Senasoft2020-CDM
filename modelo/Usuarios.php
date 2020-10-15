@@ -41,8 +41,9 @@ class usuarios{
             $stmt->closeCursor();
         }
     
-        public function listar(){
-            $stmt=$this->conexion->conectar()->prepare("SELECT FROM usuarios ");
+        public function listar_usuarios()
+        {
+            $stmt = $this->conexion->conectar()->prepare("SELECT * FROM usuarios");
             $stmt->execute();
             return $stmt->fetchAll();
             $stmt->closeCursor();

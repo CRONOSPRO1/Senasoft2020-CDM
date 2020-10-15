@@ -56,6 +56,14 @@
                                     </tr>
                                 </thead>
                                 <tbody id="registros">
+                                <?php //foreach ($this->model_admin->listar_usuarios() as $lista):?>
+                                        <tr>
+                                        <td><?//=$lista['nombre']?></td>
+                                        <td>jose@email.com</td>
+                                        <td>192898288</td>
+                                        <td>Administrador</td>
+                                        </tr>
+                                    <?php //endforeach; ?>
                                     <tr>
                                         <td>Jose Ramirez</td>
                                         <td>jose@email.com</td>

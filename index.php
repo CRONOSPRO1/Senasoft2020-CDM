@@ -27,24 +27,29 @@ else
 */
 
 ?>
-<?php 
+<?php
 require_once 'modelo/conexion.php';
 require_once 'autoload.php';
 require_once 'config/parameters.php';
 
-if (isset($_GET['controller']))  {
-    if ($_GET['controller']!="Principal") {
-        require_once'view/modulos/menu.php';
+if (isset($_GET['controller'])) {
+    if ($_GET['controller'] != "Principal") {
+        require_once 'view/modulos/menu.php';
     }
-    
+}
+//Para luego terminarlo
+if (isset($_GET['controller']) && !isset($_GET['action'])) {
+    $nombre_controlador = $_GET['controller'];
+    $_GET['action'] = "index";
+
 }
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . 'Controller';
 } elseif (!isset($_GET['controller'])  &&  !isset($_GET['action'])) {
     $nombre_controlador = controller_default;
-    $_GET['action']="index";
-  
+    $_GET['action'] = "index";
 } else {
+
 
     echo "La pagina que buscas no existe";
     exit();
