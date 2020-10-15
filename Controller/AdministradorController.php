@@ -30,8 +30,9 @@ class AdministradorController
     {
         require_once 'view/modulos/acceso/crear-usuario.php';
     }
-    public function almacen(){
-require_once'view/modulos/almacen/productos.php';
+    public function almacen()
+    {
+        require_once 'view/modulos/almacen/productos.php';
     }
     public function categorias()
     {
@@ -40,7 +41,6 @@ require_once'view/modulos/almacen/productos.php';
     public function crear_categoria()
     {
         require_once 'view/modulos/almacen/crear-categoria.php';
-
     }
     public function crear_producto()
     {
@@ -78,8 +78,9 @@ require_once'view/modulos/almacen/productos.php';
     {
         require_once 'view/modulos/ventas/crear-cliente.php';
     }
-    public function compras(){
-        require_once'view/modulos/compras/ingresos.php';
+    public function compras()
+    {
+        require_once 'view/modulos/compras/ingresos.php';
     }
     public function crear_pedido()
     {
@@ -139,48 +140,48 @@ require_once'view/modulos/almacen/productos.php';
         $this->datos['email']           = $_POST['email'];
 
         $this->model_admin->actualizar($this->datos);
-        require_once'view/modulos/acceso/index.php';
+        require_once 'view/modulos/acceso/index.php';
     }
 
-    public function notificarProducto(){
+    public function notificarProducto()
+    {
         $this->model_notificaciones->notificarProducto10();
     }
-    public function guardar_categorias(){
+    public function guardar_categorias()
+    {
         if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
-            $this->datos['descripcion']=$_POST['descripcion'];
-            $this->datos['nombre']=$_POST['nombre'];
-            $this->datos['condicion']=1;
+            $this->datos['descripcion'] = $_POST['descripcion'];
+            $this->datos['nombre'] = $_POST['nombre'];
+            $this->datos['condicion'] = 1;
 
             $this->model_categoria->insertar($this->datos);
-            require_once'view/modulos/almacen/categoria.php';
-
+            require_once 'view/modulos/almacen/categoria.php';
         }
-        
     }
-    public function eliminarCa(){
+    public function eliminarCa()
+    {
         if (!empty($_GET['id'])) {
-        $this->datos['id']=$_REQUEST['id'];
-        $this->model_categoria->eliminar($this->datos);
+            $this->datos['id'] = $_REQUEST['id'];
+            $this->model_categoria->eliminar($this->datos);
 
-        require_once'view/modulos/almacen/categorias.php';
-    }else{
-    require_once'view/modulos/almacen/categorias.php';}
-}
-    public function actualizar_categoria(){
+            require_once 'view/modulos/almacen/categorias.php';
+        } else {
+            require_once 'view/modulos/almacen/categorias.php';
+        }
+    }
+    public function actualizar_categoria()
+    {
         if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
-            $this->datos['idcategoria']=$_POST['idcategoria'];
-            $this->datos['descripcion']=$_POST['descripcion'];
-            $this->datos['nombre']=$_POST['nombre'];
-            $this->datos['condicion']=1;
+            $this->datos['idcategoria'] = $_POST['idcategoria'];
+            $this->datos['descripcion'] = $_POST['descripcion'];
+            $this->datos['nombre'] = $_POST['nombre'];
+            $this->datos['condicion'] = 1;
 
             $this->model_categoria->actualizar($this->datos);
-            require_once'view/modulos/almacen/categorias.php';
-        }else{
-            echo'<script>alert("Debe llenar todos los campos")</script>';
-            require_once'view/modulos/almacen/categorias.php';
+            require_once 'view/modulos/almacen/categorias.php';
+        } else {
+            echo '<script>alert("Debe llenar todos los campos")</script>';
+            require_once 'view/modulos/almacen/categorias.php';
         }
     }
-    
-
-
 }

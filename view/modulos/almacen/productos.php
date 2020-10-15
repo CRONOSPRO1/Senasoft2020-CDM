@@ -54,7 +54,7 @@
                                 </thead>
                                 <tbody id="registros">
                                     <?php
-                                    $disponibilidad = 0;
+                                   /* $disponibilidad = 0;
                                     if ($disponibilidad == 1) {
                                         $claserow = "bg-disponibilidad1";
                                         $dispoEstado = '<span class="text-success"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -65,11 +65,11 @@
                                         $dispoEstado = '<span class="text-warning"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1zm-7-1a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-7zm0-3a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
                                           </svg></span>';
-                                    }
+                                    }*/
 
                                     ?>
-                                    <tr class="<?php echo $claserow; ?>">
-                                        <td><?php echo $dispoEstado; ?></td>
+                                    <tr class="<?php //echo $claserow; ?>">
+                                        <td><?php //echo $dispoEstado; ?></td>
                                         <td>12342</td>
                                         <td>Arroz</td>
                                         <td>Arroz de pepa del Huila</td>
@@ -84,7 +84,7 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idproducto'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                                            <a href="javascript:void(0)"  data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
                                                 <span class="text-success">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
