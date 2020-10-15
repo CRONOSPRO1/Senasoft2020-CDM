@@ -24,7 +24,7 @@
                     <h4 class="text-secondary borde-bottom-diseno">Agregar usuario</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <form action="" method="POST">
+                <form action="<?=base_url?>Administrador/registrar_usuario" method="POST">
                     <div class="form-group form-inline">
                         <label>Nombre del usuario</label>
                         <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
@@ -32,14 +32,21 @@
 
                     <div class="form-group form-inline">
                         <label>Rol </label>
-                        <select class="form-control" required>
+                        <select class="form-control" name="rol" required>
                             <option value=""></option>
                             <option>Administrador</option>
                             <option>Proveedor</option>
                             <option>Vendedor</option>
                         </select>
                     </div>
-
+                    <div class="form-group form-inline">
+                        <label>Telefono</label>
+                        <input type="number" name="telefono" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label>Direccion</label>
+                        <input type="text" name="direccion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
                     <div class="form-group form-inline">
                         <label>Email</label>
                         <input type="email" name="email" class="form-control p2 mx-sm-3" required="" autocomplete="off">
@@ -47,7 +54,7 @@
 
                     <div class="form-group form-inline">
                         <label>Tipo de documento</label>
-                        <select class="form-control" required>
+                        <select class="form-control" name="tipo_documento" required>
                             <option value=""></option>
                             <option>Cédula de ciudadania</option>
                             <option>Tarjeta de identidad</option>
@@ -56,7 +63,7 @@
 
                     <div class="form-group form-inline">
                         <label>Número de identificación</label>
-                        <input type="number" name="identificacion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        <input type="number" name="no_documento" class="form-control p2 mx-sm-3" required="" autocomplete="off">
                     </div>
 
                     <hr class="pt-4 mt-5">

@@ -9,21 +9,23 @@ class usuarios{
             $this->conexion=new conexion();
         }
         public function actualizar($datos){
-            $stmt=$this->conexion->conectar()->prepare("UPDATE usuarios SET email=:email clave=:clave WHERE idusuario=:idusuario");
-            $stmt->bindParam(":idusuario",$datos['idusuarios'],PDO::PARAM_STR);
-            $stmt->bindParam(":nombre",$datos['nombre'],PDO::PARAM_STR);
+            $stmt=$this->conexion->conectar()->prepare("UPDATE usuarios SET email=:email ,telefono=:telefono , direccion=:direccion WHERE idusuario=:idusuario");
+            $stmt->bindParam(":idusuario",$datos['idusuario'],PDO::PARAM_STR);
             $stmt->bindParam(":email",$datos['email'],PDO::PARAM_STR);
-            $stmt->bindParam(":clave",$datos['clave'],PDO::PARAM_STR);
+            $stmt->bindParam(":telefono",$datos['telefono'],PDO::PARAM_STR);
+            $stmt->bindParam(":direccion",$datos['direccion'],PDO::PARAM_STR);
 
             $stmt->execute();
             $stmt->closeCursor();
         }
     
         public function insertar($datos){
-            $stmt=$this->conexion->conectar()->prepare("INSERT INTO usuarios  (tipo_documento,no_documento,nombre,email,clave,rol)VALUES(:tipo_documento,:no_documento,:nombre,:email,:clave,:rol) ");
+            $stmt=$this->conexion->conectar()->prepare("INSERT INTO usuarios  (tipo_documento,no_documento,nombre,telefono,direccion,email,clave,rol)VALUES(:tipo_documento,:no_documento,:nombre,:telefono,:direccion,:email,:clave,:rol) ");
             $stmt->bindParam(":tipo_documento",$datos['tipo_documento'],PDO::PARAM_STR);
             $stmt->bindParam(":no_documento",$datos['no_documento'],PDO::PARAM_STR);
             $stmt->bindParam(":nombre",$datos['nombre'],PDO::PARAM_STR);
+            $stmt->bindParam(":telefono",$datos['telefono'],PDO::PARAM_STR);
+            $stmt->bindParam(":direccion",$datos['direccion'],PDO::PARAM_STR);
             $stmt->bindParam(":email",$datos['email'],PDO::PARAM_STR);
             $stmt->bindParam(":clave",$datos['clave'],PDO::PARAM_STR);
             $stmt->bindParam(":rol",$datos['rol'],PDO::PARAM_STR);
@@ -36,7 +38,7 @@ class usuarios{
     
         public function eliminar($datos){
             $stmt=$this->conexion->conectar()->prepare("DELETE FROM usuarios WHERE idusuario=:idusuario");
-            $stmt->bindParam(":idusuarios",$datos['idusuarios'],PDO::PARAM_STR);
+            $stmt->bindParam(":idusuario",$datos['id'],PDO::PARAM_STR);
             $stmt->execute();
             $stmt->closeCursor();
         }

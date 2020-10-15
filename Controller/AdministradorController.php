@@ -2,16 +2,22 @@
 require_once 'config/parameters.php';
 require_once 'modelo/clin_pro.php';
 require_once 'modelo/Usuarios.php';
+require_once 'modelo/producto.php';
+require_once 'modelo/categoria.php';
+
 class AdministradorController
 {
     public $model_clipro;
     public $model_admin;
+    public $model_producto;
+    public $model_categoria;
 
-
-    public function __constructuct()
+    public function __construct()
     {
         $this->model_clipro = new clin_pro();
         $this->model_admin = new usuarios();
+        $this->model_producto = new producto();
+        $this->model_categoria = new categoria();
     }
     public function index()
     {
@@ -19,7 +25,7 @@ class AdministradorController
     }
     public function crear_usuario()
     {
-        require_once 'view/modulos/acceso/';
+        require_once 'view/modulos/acceso/crear-usuario.php';
     }
     public function categorias()
     {
@@ -28,6 +34,7 @@ class AdministradorController
     public function crear_categoria()
     {
         require_once 'view/modulos/almacen/crear_categoria';
+        echo "ruta categoria";
     }
     public function crear_producto()
     {
@@ -82,30 +89,44 @@ class AdministradorController
         require_once 'view/modulos/ventas/sucursales.php';
     }
 
-
-
-
-
-
-
-    /*public function registro()
+    public function registrar_usuario()
     {
-        if (!empty($_POST['']) &&  !empty($_POST[''] ) {
-            $this->datos[''] = $_POST[''];
+        if (isset($_POST) & !empty($_POST)) {
 
-            $resultado=$this->model->insertar($this->datos);
+            $this->datos['rol'] = $_POST['rol'];
 
-            if ($resultado == 1) {
-                echo '<script>alert("Ya estas registrado,puedes iniciar sesion")</script>';
-                //ruta si se registro
-                require_once 'view/index.php';
-            } else {
-                echo '<script>alert("Usuario no registrado")</script>';
-                //ruta si no se pudo registrar
-                require_once 'view/register.php';
-            }
-        } else {
-            //retornar al formulario si no puso todos los datos
+            $this->datos['rol'] = $_POST['rol'];
+            $this->datos['nombre']          = $_POST['nombre'];
+            $this->datos['tipo_documento']  = $_POST['tipo_documento'];
+            $this->datos['no_documento']    = $_POST['no_documento'];
+            $this->datos['direccion']       = $_POST['direccion'];
+            $this->datos['telefono']        = $_POST['telefono'];
+            $this->datos['email']           = $_POST['email'];
+
+            $this->datos['clave'] = $_POST['no_documento'];
+            $this->datos['clave'] = password_hash($this->datos['clave'], PASSWORD_BCRYPT);
+
+            $this->model_admin->insertar($this->datos);
+
+            require_once 'view/modulos/acceso/index.php';
         }
-    }*/
+    }
+
+    public function Eliminar_usuarios()
+    {
+        $this->datos['id'] = $_REQUEST['id'];
+
+        $this->model_admin->eliminar($this->datos);
+        require_once 'view/modulos/acceso/index.php';
+    }
+    public function Actualizar_Usuario()
+    {
+        $this->datos['idusuario'] = $_POST['idusuario'];
+        $this->datos['direccion']       = $_POST['direccion'];
+        $this->datos['telefono']        = $_POST['telefono'];
+        $this->datos['email']           = $_POST['email'];
+
+        $this->model_admin->actualizar($this->datos);
+        require_once'view/modulos/acceso/index.php';
+    }
 }

@@ -57,14 +57,13 @@
                                     </tr>
                                 </thead>
                                 <tbody id="registros">
-
+                                    <?php foreach ($this->model_categoria->listar_categorias() as $row):?>
                                     <tr>
-
-
-                                        <td>1</td>
-                                        <td>Nombre</td>
-                                        <td>Descripción</td>
+                                        <td><?=$row['idcategoria']?></td>
+                                        <td><?=$row['nombre']?></td>
+                                        <td><?=$row['descripcion']?></td>
                                         <td>
+                                   
                                             <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
                                                 <span class="text-danger">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +82,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <?php endforeach;?>
 
                                 </tbody>
                             </table>

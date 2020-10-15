@@ -1,32 +1,4 @@
-<?php /*require_once'modelo/conexion.php'; 
-require_once'config/parameters.php';
 
-
-$controller='Usuarios';
-if(!isset($_REQUEST['c']))
-{
-    require_once "controller/$controller.Controller.php";
-    $controller = ucwords($controller) . 'Controller';
-    $controller = new $controller;
-    $controller->Index();    
-}
-else
-{
-    // Obtenemos el controlador que queremos cargar
-    $controller = strtolower($_REQUEST['controller']);
-    $accion = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'Index';
-
-    // Instanciamos el controlador
-    require_once "controller/$controller.controller.php";
-    $controller = ucwords($controller) . 'Controller';
-    $controller = new $controller;
-
-    // Llama la accion
-    call_user_func( array( $controller, $accion ) );
-}
-*/
-
-?>
 <?php
 require_once 'modelo/conexion.php';
 require_once 'autoload.php';
@@ -66,10 +38,4 @@ if (class_exists($nombre_controlador)) {
     echo 'La pagina que buscas no existe';
 }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 6cee89197594aa7ea3252a1d46e98ff0f160ccbb
 ?>
