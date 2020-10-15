@@ -40,6 +40,19 @@
                 </form> -->
 
                 <div class="content">
+<<<<<<< HEAD
+                    <div class="row pb-5 px-4">
+                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <div class="from group">
+                                <label>Proveedor</label>
+                                <select name="proveedor" id="proveedor" class="form-control p py-0" data-live-search="true">
+                                    <option value=" "> </option>
+                                    <?php foreach ($this->model_clipro->listar('Proveedor') as $row) : ?>
+                                        <option value="<?= $row['idproveedor'] ?>"><?= $row['nombre'] . " " ?><?= $row['Apellido'] . " " ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+=======
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="from group">
@@ -49,16 +62,26 @@
                                 <option value="<?=$row['idproveedor']?>"><?=$row['nombre']. " "?><?=$row['Apellido']. " "?></option>
                                 <?php endforeach;?>
                             </select>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                         </div>
                     </div>
                     <div class="row pb-5 px-4">
-                        <div class="col-lg-4 col-sm-6 col-md-4 col-xs-12">
+                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
                             <div class="from group">
+<<<<<<< HEAD
+                                <label class="mb-4">Producto</label>
+                                <select name="pidproducto" id="pidproducto" class="form-control p p-0" data-live-search="true" required="">
+                                    <option value=" "> </option>
+                                    <?php foreach ($this->model_producto->listar_productos() as $row) : ?>
+                                        <option value="<?= $row['idproducto'] ?>"><?= $row['nombre'] ?></option>
+                                    <?php endforeach; ?>
+=======
                                 <label class="mb-4">Producto</label>                                
                                 <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
                                     <?php foreach ($this->model_producto->listar_productos() as $row):?>
                                         <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
                                     <?php endforeach;?>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                                 </select>
                             </div>
                         </div>
@@ -66,32 +89,50 @@
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
                                 <label class="mb-4">Cantidad</label>
-                                <input type="number" name="pcantidad" id="pcantidad" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                                <input type="number" name="pcantidad" id="pcantidad" required="" value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p p-0">
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
                                 <label class="mb-4">Precio de costo</label>
-                                <input type="number" name="pcosto" id="pcosto" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                                <input type="number" name="pcosto" id="pcosto" required="" value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p p-0">
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
                                 <label class="mb-4">Precio de venta</label>
-                                <input type="number" name="pprecio" id="pprecio" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
+                                <input type="number" name="pprecio" id="pprecio" required="" value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p p-0">
                             </div>
                         </div>
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
                                 <label class="px-5 pb-3 mb-4"> </label>
-                                <button type="button" id="bt_add" class="btn btn-outline-dark">Agregar</button>
+                                <button type="button" id="agregar" class="btn btn-outline-dark">Agregar</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<<<<<<< HEAD
+                        <div class="table-responsive">
+                            <table id="detalles" class="table table-striped table-hover">
+                                <thead>
+                                    <th>Opciones</th>
+                                    <th>Artículo</th>
+                                    <th>Cantidad</th>
+                                    <th>Costo</th>
+                                    <th>Precio</th>
+                                    <th>SubTotal</th>
+                                </thead>
+                                <form action="" method="POST">
+                                    <tbody id="bodyTable">
+
+                                    </tbody>
+                            </table>
+                        </div>
+=======
 
                         <table id="detalles" class="table table-striped table-hover">
                             <thead>
@@ -115,6 +156,7 @@
                             <tbody>
                             </tbody>
                         </table>
+>>>>>>> ce37a1864d747e18ff4c6154bfa0d0839c1265b1
                     </div>
                 </div>
 
@@ -127,6 +169,7 @@
                         <input class="btn btn-info form-control" value="Guardar" type="submit">
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -148,6 +191,49 @@
 
 
     <script>
+        $('#agregar').click(function() {
+
+            // let productoRow = [idproducto = $("#pidproducto").val(), producto = $("#pidproducto option:selected").text(), cantidad = $("#pcantidad").val(), costo = $("#pcosto").val(), precio = $("#pprecio").val()]
+
+
+            var Fila = document.createElement("tr");
+            document.getElementById("bodyTable").appendChild(Fila);
+
+            var añadirTD = document.createElement("td");
+            var añadirTD2 = document.createElement("td");
+            var añadirTD3 = document.createElement("td");
+            var añadirTD4 = document.createElement("td");
+            var añadirTD5 = document.createElement("td");
+
+            var idproductov = idproducto = $("#pidproducto").val();
+            var productov = producto = $("#pidproducto option:selected").text();
+            var cantidadv = idproducto = cantidad = $("#pcantidad").val();
+            var costov = costo = $("#pcosto").val();
+            var preciov = precio = $("#pprecio").val();
+
+            añadirTD.innerHTML = idproducto = $("#pidproducto").val() + '<input type="hidden" value=' + idproductov + '>';
+            añadirTD2.innerHTML = producto = $("#pidproducto option:selected").text() + '<input type="hidden" value=' + productov + '>';
+            añadirTD3.innerHTML = idproducto = cantidad = $("#pcantidad").val() + '<input type="hidden" value=' + cantidadv + '>';
+            añadirTD4.innerHTML = idproducto = costo = $("#pcosto").val() + '<input type="hidden" value=' + costov + '>';
+            añadirTD5.innerHTML = idproducto = precio = $("#pprecio").val() + '<input type="hidden" value=' + preciov + '>';
+
+            Fila.appendChild(añadirTD);
+            Fila.appendChild(añadirTD2);
+            Fila.appendChild(añadirTD3);
+            Fila.appendChild(añadirTD4);
+            Fila.appendChild(añadirTD5);
+
+            $("#pidproducto").val("");
+            $("#pcantidad").val("");
+            $("#pcosto").val("");
+            $("#pprecio").val("");
+
+
+        });
+    </script>
+
+
+    <script>
         window.sr = ScrollReveal();
 
         // Definimos los paramtros que enviara a la clase para dar la interactividad
@@ -164,12 +250,12 @@
         });
 
         //Obtebemos el Id del select para aplicar el estilo y ajuste del frameworl Select2
-        $("#pidproducto").select2({
+        $("#proveedor").select2({
             width: '70%'
         });
 
         $("#pidproducto").select2({
-            width: '70%'
+            width: '100%'
         });
     </script>
 </body>
