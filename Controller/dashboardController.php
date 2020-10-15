@@ -234,4 +234,19 @@ class dashboardController
             require_once 'view/modulos/almacen/categorias.php';
         }
     }
+
+    public function guardar_producto(){
+
+    }
+    public function eliminar_producto(){
+    $this->datos['idproducto']=$_REQUEST['idp'];
+    
+    $this->model_producto->eliminar($this->datos);
+
+    require_once'view/modulos/almacen/productos.php';
+    }
+    
+    public function actualizar_producto(){
+    
+    }
 }

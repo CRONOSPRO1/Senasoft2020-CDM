@@ -13,7 +13,7 @@ class producto
         $stmt = $this->conexion->conectar()->prepare
         /* El campo idproducto es autoincremental, el campo estado esta por defaul '1' */ 
         ("INSERT INTO producto (idcategoria,codigo,nombre,descripcion,stock,imagen,disponibilidad)
-        values(:nombre,:descripcion) ");
+        values(:idcategoria,:codigo,:nombre,:descripcion,:stock,:imagen,:disponibilidad) ");
 
         $stmt->bindParam(':idcategoria', $datos['idcategoria'], PDO::PARAM_STR);
         $stmt->bindParam(':codigo', $datos['codigo'], PDO::PARAM_STR);
@@ -30,7 +30,7 @@ class producto
 
     public function eliminar($datos)
     {
-        $stmt = $this->conexion->conectar()->prepare("UPDATE producto SET condicion=0 where idproducto=idproducto");
+        $stmt = $this->conexion->conectar()->prepare("UPDATE producto SET condicion=0 where idproducto=:idproducto");
         $stmt->bindParam(':idproducto', $datos['idproducto'], PDO::PARAM_STR);
         $stmt->execute();
         $stmt->closeCursor();
