@@ -39,12 +39,12 @@ require_once'view/modulos/almacen/productos.php';
     }
     public function crear_categoria()
     {
-        require_once 'view/modulos/almacen/crear_categoria.php';
+        require_once 'view/modulos/almacen/crear-categoria.php';
         echo "ruta categoria";
     }
     public function crear_producto()
     {
-        require_once 'view/modulos/almacen/crear_producto.php';
+        require_once 'view/modulos/almacen/crear-producto.php';
     }
     public function productos()
     {
@@ -52,11 +52,11 @@ require_once'view/modulos/almacen/productos.php';
     }
     public function crear_ingreso()
     {
-        require_once 'view/modulos/compras/crear_ingreso.php';
+        require_once 'view/modulos/compras/crear-ingreso.php';
     }
     public function crear_proveedor()
     {
-        require_once 'view/modulos/compras/crear_proveedor.php';
+        require_once 'view/modulos/compras/crear-proveedor.php';
     }
     public function ingresos()
     {
@@ -76,7 +76,7 @@ require_once'view/modulos/almacen/productos.php';
     }
     public function crear_cliente()
     {
-        require_once 'view/modulos/ventas/crear_cliente.php';
+        require_once 'view/modulos/ventas/crear-cliente.php';
     }
     public function compras(){
         require_once'view/modulos/compras/ingresos.php';
