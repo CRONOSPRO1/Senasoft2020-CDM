@@ -55,9 +55,9 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?=base_url?>Administrador/pedidos.php">Pedidos</a>
-                                <a class="dropdown-item" href="<?=base_url?>clientes.php">Clientes</a>
-                                <a class="dropdown-item" href="<?=base_url?>sucursales.php">Sucursale</a>
+                                <a class="dropdown-item" href="<?=base_url?>Administrador/pedidos">Pedidos</a>
+                                <a class="dropdown-item" href="<?=base_url?>clientes">Clientes</a>
+                                <a class="dropdown-item" href="<?=base_url?>sucursales">Sucursale</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">
