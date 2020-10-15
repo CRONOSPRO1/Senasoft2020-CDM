@@ -9,6 +9,9 @@
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
     <title>Crear ingreso | Automatización y gestión Multitiendas</title>
 </head>
 
@@ -124,7 +127,7 @@
                 <hr class="pt-4 mt-5">
                 <div class="form-row mt-4">
                     <div class="col-md-6 mb-3 pr-4">
-                        <a href="#" class="btn btn-danger form-control">Cancelar</a>
+                        <a href="<?= base_url ?>Administrador/ingreso" class="btn btn-danger form-control">Cancelar</a>
                     </div>
                     <div class="col-md-6 mb-3  pr-4">
                         <input class="btn btn-info form-control" value="Guardar" type="submit">
@@ -139,82 +142,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="<?= base_url ?>/assets/js/main.js"></script>
 
-    <script>
-         
-        $(document).ready(function(){
-            $('#bt_add').click(function(){
-              agregar();
-            });
-          });
-        
-        
-        
-        var cont=0;
-        total=0;
-        /*este subtotal va a capturar todos los subtotales de las filas de los detalles */
-        subtotal=[];
-        
-        function agregar()
-        {
-            idproducto=$("#pidproducto").val();
-            /*El valor que este seleccionado el texto*/
-            producto=$("#pidproducto option:selected").text();
-            cantidad=$("#pcantidad").val();
-            costo=$("#pcosto").val();
-            precio=$("#pprecio").val();
-            /*Validamos que los valores sean diferentes de vacio y cantidad mayor a cero*/
-               if ( idproducto != "" && cantidad != "" && cantidad > 0 && costo != "" && precio != ""){
-            subtotal[cont] = ( cantidad * precio ) ;
-            total = total + subtotal[cont] ;
-            var    fila = '<tr class="selected" id="fila' + cont + '">' ;
-            fila = fila + '<td><button type="button" class="btn btn-warning" onclick="eliminar(' + cont + ');">X</td>' ;
-            fila = fila + '<td><input type="hidden" name="idproducto[]" value="' + idproducto + '">' + producto + '</td>' ;
-            fila = fila + '<td><input type="number" name="cantidad[]" value="' + cantidad + '"></td>' ;
-            fila = fila + '<td><input type="number" name="costo[]" value="' + costo + '"></td>' ;
-            fila = fila + '<td><input type="number" name="precio[]" value="' + precio + '"></td>' ;
-            fila = fila + '<td>' + subtotal[cont] + '</td>' ;
-            fila = fila + '</tr>' ;
-            cont++;
-            limpiar();
-            $("#total").html("S/ "+total);
-            evaluar();
-            $("#detalles").append(fila) ;
-        }else{
-            alert("Error al ingresar el detalle de ingreso. Revise los datos del árticulo.") ;
-        }
-            
-        }
-        
-        function limpiar(){
-            $("#pcantidad").val("");
-            $("#pcosto").val("");
-            $("#pprecio").val("");
-        }
-        function evaluar()
-        {
-            if (total>0)
-                {
-                  /*el div guardar se va a visualizar con el metodo show de jq caundo si tengo detalles en los input */  
-                    $("#guardar").show();
-                }
-            else
-            {
-                /*el div guardar se va a esconder con el metodo hide de jq cuando NO tengo detalles en los input */
-                $("#guardar").hide();
-            }
-        }
-        function eliminar(index){
-            total=total-subtotal[index];
-            $("#total").html("$/. " +total);
-            $("#fila" + index).remove();
-            evaluar();
-            
-            
-           // $("#fila"+ index).remove("#fila"+ index); 
-        }
-    </script>
+    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
+    <script src="<?=base_url?>/assets/js/main.js"></script>
+   
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
