@@ -18,7 +18,7 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
-                    <h4 class="text-secondary borde-bottom-diseno">Agregar ingreso</h4>
+                    <h4 class="text-secondary borde-bottom-diseno">Agregar Compra</h4>
                     <hr class="pb-2 pt-2">
                 </div>
                 <!-- <form action="" method="POST">
@@ -40,6 +40,7 @@
                 </form> -->
 
                 <div class="content">
+<<<<<<< HEAD
                     <div class="row pb-5 px-4">
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                             <div class="from group">
@@ -50,15 +51,34 @@
                                     <option>Producto 1</option>
                                 </select>
                             </div>
+=======
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="from group">
+                            <label>Proveedor</label>
+                            <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
+                                <?php foreach ($this->model_clin_pro->listar('Proveedor') as $row):?>
+                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']?></option>
+                                <?php endforeach;?>
+                            </select>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                         </div>
                     </div>
                     <div class="row pb-5 px-4">
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xs-12">
                             <div class="from group">
+<<<<<<< HEAD
                                 <label class="mb-4">Producto</label>
                                 <select name="pidproducto" id="pidproducto" class="form-control p py-0" data-live-search="true">
                                     <option value=""> </option>
                                     <option>Producto 1</option>
+=======
+                                <label class="mb-4">Producto</label>                                
+                                <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
+                                    <?php foreach ($this->model_producto->listar_productos() as $row):?>
+                                        <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
+                                    <?php endforeach;?>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                                 </select>
                             </div>
                         </div>
@@ -92,6 +112,7 @@
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<<<<<<< HEAD
                         <div class="table-responsive">
                             <table id="detalles" class="table table-striped table-hover">
                                 <thead>
@@ -115,6 +136,31 @@
                                 </tbody>
                             </table>
                         </div>
+=======
+
+                        <table id="detalles" class="table table-striped table-hover">
+                            <thead>
+                                <th>Opciones</th>
+                                <th>Artículo</th>
+                                <th>Cantidad</th>
+                                <th>Costo</th>
+                                <th>Precio</th>
+                                <th>SubTotal</th>
+                            </thead>
+                            <td>
+                            <th>Total</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                <h4 id="total">$0.00</h4>
+                            </th>
+                            </td>
+                            <tbody>
+                            </tbody>
+                        </table>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                     </div>
                 </div>
 

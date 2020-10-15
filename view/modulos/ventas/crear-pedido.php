@@ -19,7 +19,7 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 900px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
-                    <h4 class="text-secondary borde-bottom-diseno">Agregar proveedor</h4>
+                    <h4 class="text-secondary borde-bottom-diseno">Agregar venta</h4>
                     <hr class="pb-2 pt-2">
                 </div>
                 <form action="" method="POST">
