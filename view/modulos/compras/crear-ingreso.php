@@ -21,7 +21,11 @@
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
+<<<<<<< HEAD
                     <h4 class="text-secondary borde-bottom-diseno">Agregar Compra</h4>
+=======
+                    <h4 class="text-secondary borde-bottom-diseno">Agregar ingreso</h4>
+>>>>>>> 4183c973f22403f359e87f731a5870d0aad627db
                     <hr class="pb-2 pt-2">
                 </div>
                 <!-- <form action="" method="POST">
@@ -55,7 +59,7 @@
                     <div class="row py-5 px-4">
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="from group">
-                                <label>Producto</label>
+                                <label class="mb-4">Producto</label>
                                 <select name="pidproducto" id="pidproducto" class="form-control p pb-4" data-live-search="true">
                                     <option value=""> .</option>
                                 </select>
@@ -64,27 +68,27 @@
 
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
-                                <label for="">Cantidad</label>
+                                <label class="mb-4">Cantidad</label>
                                 <input type="number" name="pcantidad" id="pcantidad" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
-                                <label for="">Precio de costo</label>
+                                <label class="mb-4">Precio de costo</label>
                                 <input type="number" name="pcosto" id="pcosto" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
-                                <label for="">Precio de venta</label>
+                                <label class="mb-4">Precio de venta</label>
                                 <input type="number" name="pprecio" id="pprecio" required value="<?php if (isset($email_acudiente)) echo $email_acudiente ?>" class="form-control p pb-4">
                             </div>
                         </div>
                         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
                             <div class="form-group">
-                                <label for="" class="px-5 pb-3"> </label>
+                                <label class="px-5 pb-3 mb-4"> </label>
                                 <button type="button" id="bt_add" class="btn btn-outline-dark">Agregar</button>
                             </div>
                         </div>
