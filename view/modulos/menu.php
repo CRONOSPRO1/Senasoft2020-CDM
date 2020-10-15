@@ -16,8 +16,8 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-white shadow" id="barra">
 
                 <div class="mr-auto">
-                    <a class="nav-link" href="#">
-                        <img src="..." alt="Logo" width="100px">
+                    <a class="nav-link p-0 m-0" href="#">
+                        <img src="<?= base_url ?>/assets/img/logo.png" alt="Logo" width="100px">
                     </a>
                 </div>
 

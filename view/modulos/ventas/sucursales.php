@@ -138,7 +138,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="crear-sucursal.php">✚</a>
+    <a class="añadir" href="crear_sucursal">✚</a>
 
 
 
