@@ -51,8 +51,8 @@
                         <div class="from group">
                             <label>Proveedor</label>
                             <select name="proveedor" id="proveedor" class="form-control" data-live-search="true">
-                                <?php foreach ($this->model_clin_pro->listar('Proveedor') as $row):?>
-                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']?></option>
+                                <?php foreach ($this->model_clipro->listar('Proveedor') as $row):?>
+                                <option value="<?=$row['idproveedor']?>"><?=$row['nombre']. " "?><?=$row['Apellido']. " "?></option>
                                 <?php endforeach;?>
                             </select>
                         </div>

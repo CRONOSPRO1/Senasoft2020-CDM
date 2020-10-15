@@ -51,6 +51,7 @@ class clin_pro{
         $stmt=$this->conexion->conectar()->prepare("SELECT * FROM clin_pro WHERE tipo=:tipo");
         $stmt->bindParam(":tipo",$tipo,PDO::PARAM_STR);
         $stmt->execute();
+        return $stmt->fetchAll();
         $stmt->closeCursor();
     }
     public function validacion($no_documento)
