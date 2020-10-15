@@ -6,7 +6,7 @@ require_once 'modelo/producto.php';
 require_once 'modelo/categoria.php';
 require_once 'modelo/notificaciones.php';
 
-class AdministradorController
+class dashboardController
 {
     public $model_clipro;
     public $model_admin;

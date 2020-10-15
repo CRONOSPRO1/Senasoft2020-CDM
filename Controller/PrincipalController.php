@@ -86,11 +86,11 @@ class PrincipalController
                             $_SESSION['id_admin'] = $resultado[0]['id_admin'];
                             $_SESSION['nombre'] = $resultado[0]['nombre'];
                             echo "Admin";
-                            header('location:' . base_url . 'administrador/index');
+                            header('location:' . base_url . 'dashboard/index');
                         } else {
                             $_SESSION['id_usuario'] = $resultado[0]['id_usuario'];
                             $_SESSION['nombre'] = $resultado[0]['nombre'];
-                            header('location:' . base_url . 'administrador/sucursales');
+                            header('location:' . base_url . 'dashboard/sucursales');
                         }
                         //ruta si puso bien el usuario y contraseña
                     }

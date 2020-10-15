@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
+    <link rel="stylesheet" href="<?= base_url ?>assets/css/main.css">
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 <body>
 
     <!-- Incluimos el archivo de la barra superior con el método include de php -->
- 
+
 
     <div class="container">
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 900px; margin: 0 auto;">
@@ -24,7 +24,7 @@
                     <h4 class="text-secondary borde-bottom-diseno">Agregar usuario</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <form action="<?=base_url?>Administrador/registrar_usuario" method="POST">
+                <form action="<?= base_url ?>dashboard/registrar_usuario" method="POST">
                     <div class="form-group form-inline">
                         <label>Nombre del usuario</label>
                         <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
@@ -32,7 +32,7 @@
 
                     <div class="form-group form-inline">
                         <label>Rol </label>
-                        <select class="form-control p2 mx-sm-3" name="rol" required>
+                        <select class="form-control p2 mx-sm-3" name="rol" id="rol" required>
                             <option value=""></option>
                             <option>Administrador</option>
                             <option>Proveedor</option>
@@ -54,7 +54,7 @@
 
                     <div class="form-group form-inline">
                         <label>Tipo de documento</label>
-                        <select class="form-control p2 mx-sm-3" name="tipo_documento" required>
+                        <select class="form-control p2 mx-sm-3" name="tipo_documento" id="tipo_documento" required>
                             <option value=""></option>
                             <option>Cédula de ciudadania</option>
                             <option>Tarjeta de identidad</option>
@@ -69,7 +69,7 @@
                     <hr class="pt-4 mt-5">
                     <div class="form-row mt-4">
                         <div class="col-md-6 mb-3 pr-4">
-                            <a href="<?= base_url ?>Administrador/index" class="btn btn-danger form-control">Cancelar</a>
+                            <a href="<?= base_url ?>dashboard/index" class="btn btn-danger form-control">Cancelar</a>
                         </div>
                         <div class="col-md-6 mb-3  pr-4">
                             <input class="btn btn-info form-control" value="Guardar" type="submit">
@@ -90,8 +90,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?=base_url?>/assets/js/main.js"></script>
-    
+    <script src="<?= base_url ?>/assets/js/main.js"></script>
+
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -110,6 +110,15 @@
             origin: 'right',
 
             distance: '-800px'
+        });
+
+        //Obtebemos el Id del select para aplicar el estilo y ajuste del frameworl Select2
+        $("#tipo_documento").select2({
+            width: '70%'
+        });
+
+        $("#rol").select2({
+            width: '70%'
         });
     </script>
 </body>

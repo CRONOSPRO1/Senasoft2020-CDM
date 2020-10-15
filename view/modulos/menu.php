@@ -8,6 +8,10 @@
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
+    <link href="<?= base_url ?>assets/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -73,8 +77,8 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/productos">Productos</a>
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/categorias">Categoria</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/productos">Productos</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/categorias">Categoria</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,12 +92,12 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/ingresos">Ingresos</a>
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/proveedores">Proveedores</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/ingresos">Ingresos</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/proveedores">Proveedores</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link px-4" href="<?= base_url ?>Administrador/ventas" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link px-4" href="<?= base_url ?>dashboard/ventas" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                                     <path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
@@ -104,9 +108,9 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/pedidos">Pedidos</a>
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/clientes">Clientes</a>
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/sucursales">Sucursale</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/pedidos">Pedidos</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/clientes">Clientes</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/sucursales">Sucursale</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mr-4">
@@ -121,7 +125,7 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url ?>Administrador/index">Usuarios</a>
+                                <a class="dropdown-item" href="<?= base_url ?>dashboard/index">Usuarios</a>
                             </div>
                         </li>
                     </ul>

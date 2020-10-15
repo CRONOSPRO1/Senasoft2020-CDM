@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
+    <link rel="stylesheet" href="<?= base_url ?>assets/css/main.css">
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
     <title>Crear cliente | Automatización y gestión Multitiendas</title>
 </head>
@@ -44,7 +41,7 @@
 
                     <div class="form-group form-inline">
                         <label>Tipo de documento</label>
-                        <select class="form-control" required>
+                        <select class="form-control" required id="tipo_documento">
                             <option value=""></option>
                             <option>Cédula de ciudadania</option>
                             <option>Tarjeta de identidad</option>
@@ -69,7 +66,7 @@
                     <hr class="pt-4 mt-5">
                     <div class="form-row mt-4">
                         <div class="col-md-6 mb-3 pr-4">
-                            <a href="<?= base_url ?>Administrador/proclientes" class="btn btn-danger form-control">Cancelar</a>
+                            <a href="<?= base_url ?>dashboard/clientes" class="btn btn-danger form-control">Cancelar</a>
                         </div>
                         <div class="col-md-6 mb-3  pr-4">
                             <input class="btn btn-info form-control" value="Guardar" type="submit">
@@ -85,12 +82,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+
     <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?=base_url?>/assets/js/main.js"></script>
+    <script src="<?= base_url ?>/assets/js/main.js"></script>
 
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -109,6 +106,10 @@
             origin: 'left',
 
             distance: '-800px'
+        });
+        //Obtebemos el Id del select para aplicar el estilo y ajuste del frameworl Select2
+        $("#tipo_documento").select2({
+            width: '70%'
         });
     </script>
 </body>

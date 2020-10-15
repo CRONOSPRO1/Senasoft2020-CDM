@@ -9,18 +9,12 @@
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Framework Select2 para dar más interactivdad a los Select mediante los formularios con una búsqueda en tiempo real-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-
     <title>Crear ingreso | Automatización y gestión Multitiendas</title>
 </head>
 
 <body>
 
-    <!-- Incluimos el archivo de la barra superior con el método include de php -->
-
-
-    <div class="container">
+    <div class="container mb-4">
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 1000px; margin: 0 auto;">
             <div class="card-body">
                 <div class="card-title pb-2 text-center">
@@ -46,6 +40,18 @@
                 </form> -->
 
                 <div class="content">
+<<<<<<< HEAD
+                    <div class="row pb-5 px-4">
+                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <div class="from group">
+                                <label>Proveedor</label>
+                                <span class="ml-4"></span>
+                                <select name="pidproducto" id="pidproducto" class="form-control p py-0" data-live-search="true">
+                                    <option value=""> </option>
+                                    <option>Producto 1</option>
+                                </select>
+                            </div>
+=======
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="from group">
@@ -55,16 +61,24 @@
                                 <option value="<?=$row['idproveedor']?>"><?=$row['nombre']. " "?><?=$row['Apellido']. " "?></option>
                                 <?php endforeach;?>
                             </select>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                         </div>
                     </div>
-                    <div class="row py-5 px-4">
-                        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                    <div class="row pb-5 px-4">
+                        <div class="col-lg-4 col-sm-6 col-md-4 col-xs-12">
                             <div class="from group">
+<<<<<<< HEAD
+                                <label class="mb-4">Producto</label>
+                                <select name="pidproducto" id="pidproducto" class="form-control p py-0" data-live-search="true">
+                                    <option value=""> </option>
+                                    <option>Producto 1</option>
+=======
                                 <label class="mb-4">Producto</label>                                
                                 <select name="pidproducto" id="pidproducto" class="form-control" data-live-search="true" >
                                     <?php foreach ($this->model_producto->listar_productos() as $row):?>
                                         <option value="<?=$row['idproducto']?>"><?=$row['nombre']?></option>                                
                                     <?php endforeach;?>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                                 </select>
                             </div>
                         </div>
@@ -98,6 +112,31 @@
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<<<<<<< HEAD
+                        <div class="table-responsive">
+                            <table id="detalles" class="table table-striped table-hover">
+                                <thead>
+                                    <th>Opciones</th>
+                                    <th>Artículo</th>
+                                    <th>Cantidad</th>
+                                    <th>Costo</th>
+                                    <th>Precio</th>
+                                    <th>SubTotal</th>
+                                </thead>
+                                <td>
+                                <th>Total</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <h4 id="total">$0.00</h4>
+                                </th>
+                                </td>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+=======
 
                         <table id="detalles" class="table table-striped table-hover">
                             <thead>
@@ -121,13 +160,14 @@
                             <tbody>
                             </tbody>
                         </table>
+>>>>>>> da4e6f50288f8bde2ef655ff162a6e0c85026801
                     </div>
                 </div>
 
                 <hr class="pt-4 mt-5">
                 <div class="form-row mt-4">
                     <div class="col-md-6 mb-3 pr-4">
-                        <a href="<?= base_url ?>Administrador/ingreso" class="btn btn-danger form-control">Cancelar</a>
+                        <a href="<?= base_url ?>dashboard/ingreso" class="btn btn-danger form-control">Cancelar</a>
                     </div>
                     <div class="col-md-6 mb-3  pr-4">
                         <input class="btn btn-info form-control" value="Guardar" type="submit">
@@ -147,8 +187,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Incluimos el archivo del Main de JavaScript para ajustar contenidos y dar más interactividad a la capa vista -->
-    <script src="<?=base_url?>/assets/js/main.js"></script>
-   
+    <script src="<?= base_url ?>/assets/js/main.js"></script>
+
     <!-- ScrollReveal (Framework para aportar interavtivdad y animcación a las paginas) -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -167,6 +207,15 @@
             origin: 'right',
 
             distance: '-800px'
+        });
+
+        //Obtebemos el Id del select para aplicar el estilo y ajuste del frameworl Select2
+        $("#pidproducto").select2({
+            width: '70%'
+        });
+
+        $("#pidproducto").select2({
+            width: '70%'
         });
     </script>
 </body>

@@ -14,9 +14,6 @@
 
 <body>
 
-    <!-- Incluimos el archivo de la barra superior con el método include de php -->
-
-
     <div class="container">
         <div class="card shadow-lg p-3 mb-3 bg-white rounded mt-4" style="max-width: 900px; margin: 0 auto;">
             <div class="card-body">
@@ -53,7 +50,7 @@
                     <hr class="pt-4 mt-5">
                     <div class="form-row mt-4">
                         <div class="col-md-6 mb-3 pr-4">
-                            <a href="<?= base_url ?>Administrador/prodcutos" class="btn btn-danger form-control">Cancelar</a>
+                            <a href="<?= base_url ?>dashboard/productos" class="btn btn-danger form-control">Cancelar</a>
                         </div>
                         <div class="col-md-6 mb-3  pr-4">
                             <input class="btn btn-info form-control" value="Guardar" type="submit">
