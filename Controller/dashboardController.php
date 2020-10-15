@@ -184,4 +184,54 @@ class dashboardController
             require_once 'view/modulos/almacen/categorias.php';
         }
     }
+
+
+    /* Aqui va la CRUD de proveedor */
+
+    public function guardar_proveedor()
+    {
+        if (!empty($_POST['nombre']) && !empty($_POST['Apellido']) && $_POST['tipo_documento'] && !empty($_POST['no_documento']) && !empty($_POST['direccion']) && !empty($_POST['telefono']) && !empty($_POST['email'])) {
+            
+            $this->datos['tipo'] = 'Proveedor';
+            $this->datos['nombre'] = $_POST['nombre'];
+            $this->datos['Apellido'] = $_POST['Apellido'];
+            $this->datos['tipo_documento'] = $_POST['tipo_documento'];
+            $this->datos['no_documento'] = $_POST['no_documento'];
+            $this->datos['direccion'] = $_POST['direccion'];
+            $this->datos['telefono'] = $_POST['telefono'];
+            $this->datos['email'] = $_POST['email'];
+
+            $this->model_clipro->insertar($this->datos);
+            require_once 'view/modulos/compras/proveedores.php';
+        }else {
+            echo '<script>alert("Error, ocurrio algo inesoperado")</script>';
+            require_once 'view/modulos/compras/proveedores.php';
+        }
+    }
+    public function eliminarPro()
+    {
+        if (!empty($_GET['id'])) {
+            $this->datos['id'] = $_REQUEST['id'];
+            $this->model_clipro->eliminar($this->datos);
+
+            require_once 'view/modulos/compras/proveedores.php';
+        } else {
+            require_once 'view/modulos/compras/proveedores.php';
+        }
+    }
+    public function actualizar_proveedor()
+    {
+        if (!empty($_POST['descripcion']) && !empty($_POST['nombre'])) {
+            $this->datos['idcategoria'] = $_POST['idcategoria'];
+            $this->datos['descripcion'] = $_POST['descripcion'];
+            $this->datos['nombre'] = $_POST['nombre'];
+            $this->datos['condicion'] = 1;
+
+            $this->model_clipro->actualizar($this->datos);
+            require_once 'view/modulos/almacen/categorias.php';
+        } else {
+            echo '<script>alert("Debe llenar todos los campos")</script>';
+            require_once 'view/modulos/almacen/categorias.php';
+        }
+    }
 }

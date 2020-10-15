@@ -26,11 +26,11 @@ class clin_pro{
 
     public function insertar($datos){
         $stmt=$this->conexion->conectar()->prepare("INSERT INTO clin_pro 
-        (tipo,nombre,apellido,tipo_documento,no_documento,direccion,telefono,email)VALUES(:tipo,:nombre,:apellido,:tipo_documento,:no_documento,:direccion,:telefono,:email)  WHERE");
+        (tipo,nombre,Apellido,tipo_documento,no_documento,direccion,telefono,email)VALUES(:tipo,:nombre,:Apellido,:tipo_documento,:no_documento,:direccion,:telefono,:email)");
 
         $stmt->bindParam(":tipo",$datos['tipo'],PDO::PARAM_STR);
         $stmt->bindParam(":nombre",$datos['nombre'],PDO::PARAM_STR);
-        $stmt->bindParam(":apellido",$datos['apellido'],PDO::PARAM_STR);
+        $stmt->bindParam(":Apellido",$datos['Apellido'],PDO::PARAM_STR);
         $stmt->bindParam(":tipo_documento",$datos['tipo_documento'],PDO::PARAM_STR);
         $stmt->bindParam(":no_documento",$datos['no_documento'],PDO::PARAM_STR);
         $stmt->bindParam(":direccion",$datos['direccion'],PDO::PARAM_STR);

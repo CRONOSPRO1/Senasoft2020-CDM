@@ -49,6 +49,7 @@
                         <div class="table-responsive" id="tabla">
                             <table class="table table-hover table-striped text-center">
                                 <thead>
+                                
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Email</th>
@@ -59,15 +60,17 @@
                                     </tr>
                                 </thead>
                                 <tbody id="registros">
+                                <?php foreach ($this->model_clipro->listar('Proveedor') as $lista):?>
 
                                     <tr>
-                                        <td>Proveedor etc 1</td>
-                                        <td>proveedor1@email.com</td>
-                                        <td>10928379</td>
-                                        <td>Cra 32 # 92 B20</td>
-                                        <td>102382729</td>
+                                        <td><?=$lista['nombre']." "?><?=$lista['nombre']." "?></td>
+                                        <td><?=$lista['email']?></td>
+                                        <td><?=$lista['no_documento']?></td>
+                                        <td><?=$lista['direccion']?></td>
+                                        <td><?=$lista['telefono']?></td>
                                         <td>
-                                            <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                                        <!-- esta es la forma de editar y eliminar registros por medio de ventanas modales -->
+                                        <a href="<?=base_url?>dashboard/eliminarPro&id=<?=$lista['id']?>" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
                                                 <span class="text-danger">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -75,7 +78,7 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['idproveedor'] ?>','<?= $lista['nombre'] ?>','<?= $lista['descripcion'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
+                                            <a href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['id'] ?>','<?= $lista['nombre'] ?>','<?= $lista['Apellido'] ?>')" data-target="#actualizar" data-toggle="tooltip" data-placement="top" title="Actualizar">
                                                 <span class="text-success">
                                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -83,8 +86,12 @@
                                                     </svg>
                                                 </span>
                                             </a>
-                                        </td>
+                                        </td>                                   
+                                    
+                                    
                                     </tr>
+
+                                    <?php endforeach;?>
 
                                 </tbody>
                             </table>
@@ -96,11 +103,11 @@
     </div>
 
     <script>
-        function mostarDetalles(idproveedor, nombre, descripcion) {
+        function mostarDetalles(id, nombre, Apellido) {
             $('#actualizar').modal('show');
             document.getElementById("idproveedor").value = idproveedor;
             document.getElementById("nombre").value = nombre;
-            document.getElementById("descripcion").value = descripcion;
+            document.getElementById("Apellido").value = Apellido;
         }
     </script>
 
@@ -115,19 +122,47 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="POST">
+                <form action="<?=base_url?>dashboard/actualizar_proveedor" method="POST">
                     <div class="modal-body">
                         <div class="form-group form-inline">
                             <label>Nombre del proveedor</label>
-                            <input type="hidden" id="idproveedor" name="idproveedor">
+                            <input type="hidden" id="id" name="id">
                             <input type="text" name="nombre" id="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off" style="max-width: 65%;">
                         </div>
 
                         <div class="form-group form-inline">
-                            <label>Descripción</label>
+                        <label>Apellidos del proveedor</label>
+                        <input type="text" name="Apellido" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
 
-                            <input type="text" name="descripcion" id="descripcion" class="form-control p2 mx-sm-3" required="">
-                        </div>
+                    <div class="form-group form-inline">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
+
+                    <div class="form-group form-inline">
+                        <label>Tipo de documento</label>
+                        <select name = "tipo_documento" class="form-control" required id="tipo_documento">
+                            <option value=""></option>
+                            <option>Cédula de ciudadania</option>
+                            <option>Tarjeta de identidad</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-inline">
+                        <label>Número de identificación</label>
+                        <input type="number" name="no_documento" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
+
+                    <div class="form-group form-inline">
+                        <label>Número telefonico</label>
+                        <input type="number" name="telefono" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
+
+                    <div class="form-group form-inline">
+                        <label>Dirección</label>
+                        <input type="text" name="direccion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                    </div>
 
                         <hr class="pt-4 mt-5">
                         <div class="form-row mt-4">
