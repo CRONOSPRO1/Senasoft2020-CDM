@@ -32,6 +32,12 @@ require_once 'modelo/conexion.php';
 require_once 'autoload.php';
 require_once 'config/parameters.php';
 
+if (isset($_GET['controller']))  {
+    if ($_GET['controller']!="Principal") {
+        require_once'view/modulos/menu.php';
+    }
+    
+}
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . 'Controller';
 } elseif (!isset($_GET['controller'])  &&  !isset($_GET['action'])) {
@@ -55,6 +61,7 @@ if (class_exists($nombre_controlador)) {
     echo 'La pagina que buscas no existe';
 }
 
-?>
+
+
 
 ?>

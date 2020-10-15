@@ -8,12 +8,12 @@ class AdministradorController
     public $model_admin;
 
 
-    public function __construct()
+    public function __constructuct()
     {
-        $this->model_clipro;
-        new clin_pro();
-        $this->model_admin;
-        new usuarios();
+        $this->model_clipro =
+            new clin_pro();
+        $this->model_admin =
+            new usuarios();
     }
     public function index()
     {
