@@ -4,6 +4,7 @@ require_once 'modelo/clin_pro.php';
 require_once 'modelo/Usuarios.php';
 require_once 'modelo/producto.php';
 require_once 'modelo/categoria.php';
+require_once 'modelo/notificaciones.php';
 
 class AdministradorController
 {
@@ -11,6 +12,7 @@ class AdministradorController
     public $model_admin;
     public $model_producto;
     public $model_categoria;
+    public $modle_notificaciones;
 
     public function __construct()
     {
@@ -18,6 +20,7 @@ class AdministradorController
         $this->model_admin = new usuarios();
         $this->model_producto = new producto();
         $this->model_categoria = new categoria();
+        $this->model_notificaciones = new notificacion();
     }
     public function index()
     {
@@ -128,5 +131,9 @@ class AdministradorController
 
         $this->model_admin->actualizar($this->datos);
         require_once'view/modulos/acceso/index.php';
+    }
+
+    public function notificarProducto(){
+        $this->model_notificaciones->notificarProducto10();
     }
 }

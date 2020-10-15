@@ -8,16 +8,10 @@
 
     <!-- Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <title>Crear ingreso | Automatización y gestión Multitiendas</title>
 </head>
 
 <body>
-<<<<<<< HEAD
-<header>
-=======
     <header>
->>>>>>> 4183c973f22403f359e87f731a5870d0aad627db
         <div class="container-fluid mb-5">
             <nav class="navbar navbar-expand-lg navbar-light bg-white shadow" id="barra">
 
@@ -134,8 +128,4 @@
                 </div>
             </nav>
         </div>
-<<<<<<< HEAD
     </header>
-=======
-    </header>
->>>>>>> 4183c973f22403f359e87f731a5870d0aad627db

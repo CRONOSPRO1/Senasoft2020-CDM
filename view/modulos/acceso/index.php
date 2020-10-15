@@ -19,6 +19,9 @@
 
 
 
+
+
+
     <div class="container mb-5">
         <div class="row">
             <div class="col">
@@ -27,8 +30,9 @@
                         <div class="row px-4">
                             <div class="mr-auto">
                                 <h4>Usuarios</h4>
-                            </div>
 
+                                <a href="<?= base_url ?>Administrador/notificarProducto">Notificar</a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -58,19 +62,19 @@
                                 <tbody id="registros">
                                     <?php foreach ($this->model_admin->listar_usuarios() as $lista) : ?>
                                         <tr>
-                                            <td><?=$lista['nombre'] ?></td>
-                                            <td><?=$lista['email'] ?></td>
-                                            <td><?=$lista['no_documento'] ?></td>
-                                            <td><?=$lista['rol'] ?></td>
+                                            <td><?= $lista['nombre'] ?></td>
+                                            <td><?= $lista['email'] ?></td>
+                                            <td><?= $lista['no_documento'] ?></td>
+                                            <td><?= $lista['rol'] ?></td>
                                             <td>
-                                                <a href="<?=base_url?>Administrador/Eliminar_usuarios&id=<?=$lista['idusuario'] ?>" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                                                <a href="<?= base_url ?>Administrador/Eliminar_usuarios&id=<?= $lista['idusuario'] ?>" class="mr-2" data-toggle="tooltip" data-placement="top" title="Eliminar">
                                                     <span class="text-danger">
                                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                                         </svg>
                                                     </span>
-                                                    <a data-toggle="tooltip" data-placement="top" title="Actualizar" href="javascript:void(0)" onclick="mostarDetalles('<?=$lista['telefono']?>','<?=$lista['direccion']?>','<?= $lista['nombre'] ?>','<?= $lista['email'] ?>','<?= $lista['no_documento'] ?>','<?= $lista['idusuario'] ?>')" data-target="#actualizar">
+                                                    <a data-toggle="tooltip" data-placement="top" title="Actualizar" href="javascript:void(0)" onclick="mostarDetalles('<?= $lista['telefono'] ?>','<?= $lista['direccion'] ?>','<?= $lista['nombre'] ?>','<?= $lista['email'] ?>','<?= $lista['no_documento'] ?>','<?= $lista['idusuario'] ?>')" data-target="#actualizar">
                                                         <span class="text-success">
                                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -102,21 +106,21 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?=base_url?>Administrador/Actualizar_Usuario" method="POST">
+                <form action="<?= base_url ?>Administrador/Actualizar_Usuario" method="POST">
                     <input type="hidden" id="idusuario" name="idusuario">
                     <div class="modal-body">
                         <div class="form-group form-inline">
                             <label>Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control p2 mx-sm-3"readonly autocomplete="off" style="max-width: 65%;">
+                            <input type="text" name="nombre" id="nombre" class="form-control p2 mx-sm-3" readonly autocomplete="off" style="max-width: 65%;">
                         </div>
                         <div class="form-group form-inline">
-                        <label>Telefono</label>
-                        <input type="number" name="telefono" id="telefono"class="form-control p2 mx-sm-3" required="" autocomplete="off">
-                    </div>
-                    <div class="form-group form-inline">
-                        <label>Direccion</label>
-                        <input type="text" name="direccion" id="direccion"class="form-control p2 mx-sm-3" required="" autocomplete="off">
-                    </div>
+                            <label>Telefono</label>
+                            <input type="number" name="telefono" id="telefono" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        </div>
+                        <div class="form-group form-inline">
+                            <label>Direccion</label>
+                            <input type="text" name="direccion" id="direccion" class="form-control p2 mx-sm-3" required="" autocomplete="off">
+                        </div>
                         <div class="form-group form-inline">
                             <label>Email</label>
                             <input type="text" name="email" id="email" class="form-control p2 mx-sm-3" required="">
@@ -124,7 +128,7 @@
 
                         <div class="form-group form-inline">
                             <label>Número de identificación</label>
-                            <input type="number" name="no_documento" id="no_documento" readonly autocomplete="off"class="form-control p2 mx-sm-3" required="">
+                            <input type="number" name="no_documento" id="no_documento" readonly autocomplete="off" class="form-control p2 mx-sm-3" required="">
                         </div>
 
                         <hr class="pt-4 mt-5">
@@ -143,7 +147,7 @@
         </div>
     </div>
 
-    <a class="añadir" href="<?=base_url?>Administrador/crear_usuario">✚</a>
+    <a class="añadir" href="<?= base_url ?>Administrador/crear_usuario">✚</a>
 
 
 
@@ -162,15 +166,15 @@
 
 
     <script>
-        function mostarDetalles(telefono,direccion,nombre, email, no_documento,idusuario) {
+        function mostarDetalles(telefono, direccion, nombre, email, no_documento, idusuario) {
             $('#actualizar').modal('show');
-            
-            document.getElementById("telefono").value=telefono;
-            document.getElementById("direccion").value=direccion;
+
+            document.getElementById("telefono").value = telefono;
+            document.getElementById("direccion").value = direccion;
             document.getElementById("nombre").value = nombre;
             document.getElementById("email").value = email;
             document.getElementById("no_documento").value = no_documento;
-            document.getElementById("idusuario").value=idusuario;
+            document.getElementById("idusuario").value = idusuario;
         }
     </script>
 
