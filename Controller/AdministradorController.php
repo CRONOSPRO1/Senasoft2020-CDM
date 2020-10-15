@@ -39,12 +39,12 @@ require_once'view/modulos/almacen/productos.php';
     }
     public function crear_categoria()
     {
-        require_once 'view/modulos/almacen/crear_categoria';
+        require_once 'view/modulos/almacen/crear_categoria.php';
         echo "ruta categoria";
     }
     public function crear_producto()
     {
-        require_once 'view/modulos/almacen/crear_producto';
+        require_once 'view/modulos/almacen/crear_producto.php';
     }
     public function productos()
     {
