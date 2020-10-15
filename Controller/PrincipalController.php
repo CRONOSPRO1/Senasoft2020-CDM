@@ -3,22 +3,29 @@ require_once 'config/parameters.php';
 require_once 'modelo/clin_pro.php';
 require_once 'modelo/Usuarios.php';
 require_once 'modelo/producto.php';
+require_once 'modelo/categoria.php';
 
 class PrincipalController
 {
     public $model_clipro;
     public $model_admin;
     public $model_producto;
+    public $model_categoria;
 
     public function __construct()
     {
         $this->model_clipro = new clin_pro();
         $this->model_admin = new usuarios();
         $this->model_producto = new producto();
+        $this->model_categoria=new categoria();
     }
     public function index()
     {
         require_once 'view/index.php';
+    }
+    public function categorias()
+    {
+        require_once 'view/modulos/almacen/categorias.php';
     }
     public function actualizar()
     {
@@ -94,8 +101,11 @@ class PrincipalController
                    
                 }
             }
+        }else{
+            echo '<script>alert("Debe llenar todos los campos")</script>';
+        require_once 'view/index.php';
         }
-        echo '<script>alert("Debe llenar todos los campos")</script>';
+        echo '<script>alert("Datos incorrectos")</script>';
         require_once 'view/index.php';
 
     }

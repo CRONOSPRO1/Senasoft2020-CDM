@@ -1,7 +1,6 @@
 <?php
-require_once 'conexion.php';
-class categoria
-{
+require_once 'Conexion.php';
+class categoria{
     public $conexion;
 
     public function __construct()
@@ -42,7 +41,7 @@ class categoria
     public function listar_categorias()
     {
         $stmt = $this->conexion->conectar()->prepare
-        ("SELECT * FROM categorias WHERE condicion=1");
+        ("SELECT * FROM categoria ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();

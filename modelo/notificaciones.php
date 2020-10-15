@@ -1,6 +1,6 @@
 <?php
 require_once 'conexion.php';
-class producto
+class notificacion
 {
     public $conexion;
 
@@ -10,25 +10,36 @@ class producto
     }
     public function notificarProducto10()
     {
+            
+
         $stmt = $this->conexion->conectar()->prepare
-
-        ("SELECT COUNT(stock) FROM producto WHERE");
+        ("SELECT stock, idproducto FROM producto WHERE stock <= 10");
         $stmt->execute();
-        return $stmt->fetchAll();
-        $stmt->closeCursor();
+    
+        $fetch = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        while($fetch){
+            $stock = $fetch["stock"];
+            $id = $fetch["idproducto"];
 
-       
+            // echo $id;
 
-        if($result < 10){
-            ("INSERT INTO notificaciones (idcategoria,codigo,nombre,descripcion,stock,imagen,disponibilidad)
-            values(:nombre,:descripcion) ");
-
-            $stmt->bindParam(':idcategoria', ['idcategoria'], PDO::PARAM_STR);
-            $stmt->execute();
-            $stmt->closeCursor();
+            // ("INSERT INTO notificaciones (Accion,Fecha)
+            // values(:'El producto .x. tiene 10 o menos cantidad de Stock', :NOW()) ");
+            // $stmt->execute();
+            // $stmt->closeCursor();
         }
 
-             
+
+        if (is_array($fetch))  {
+          
+    
+        
+        }else {
+            echo 'NO';
+        }
+
+
     }
 
  
