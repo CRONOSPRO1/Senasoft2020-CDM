@@ -60,7 +60,7 @@ class PrincipalController
                     $_SESSION['Nombre_vendedor'] = $resultado[0]['nombre'];
 
                     //ruta si puso bien el usuario y contraseña
-                    echo "session de de un proveedor";
+                    echo "session de un proveedor";
                 } else {
 
                     //si no puso bien las contraseña
