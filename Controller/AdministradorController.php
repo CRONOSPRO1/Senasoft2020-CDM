@@ -30,6 +30,9 @@ class AdministradorController
     {
         require_once 'view/modulos/acceso/crear-usuario.php';
     }
+    public function almacen(){
+require_once'view/modulos/almacen/productos.php';
+    }
     public function categorias()
     {
         require_once 'view/modulos/almacen/categorias.php';
@@ -65,7 +68,7 @@ class AdministradorController
     }
     public function ventas()
     {
-        require_once 'view/modulos/ventas/index.php';
+        require_once 'view/modulos/ventas/clientes.php';
     }
     public function clientes()
     {
@@ -74,6 +77,9 @@ class AdministradorController
     public function crear_cliente()
     {
         require_once 'view/modulos/ventas/crear_cliente.php';
+    }
+    public function compras(){
+        require_once'view/modulos/compras/ingresos.php';
     }
     public function crear_pedido()
     {
