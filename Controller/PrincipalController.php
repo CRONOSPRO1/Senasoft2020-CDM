@@ -94,8 +94,11 @@ class PrincipalController
                    
                 }
             }
+        }else{
+            echo '<script>alert("Debe llenar todos los campos")</script>';
+        require_once 'view/index.php';
         }
-        echo '<script>alert("Debe llenar todos los campos")</script>';
+        echo '<script>alert("Datos incorrectos")</script>';
         require_once 'view/index.php';
 
     }
