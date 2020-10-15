@@ -24,7 +24,7 @@
                     <h4 class="text-secondary borde-bottom-diseno">Agregar usuario</h4>
                     <hr class="pb-2 pt-2">
                 </div>
-                <form action="<?= base_url ?>Administrador/registrar_usuario" method="POST">
+                <form action="<?= base_url ?>dashboard/registrar_usuario" method="POST">
                     <div class="form-group form-inline">
                         <label>Nombre del usuario</label>
                         <input type="text" name="nombre" class="form-control p2 mx-sm-3" required="" autocomplete="off">
